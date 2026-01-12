@@ -51,15 +51,15 @@ const CARS = [
     }
 ];
 
-export default function Experience() {
+export default function Garage() {
     const { t } = useLanguage();
 
     return (
-        <section id="experience" className="py-24 bg-black">
+        <section id="garage" className="py-24 bg-black">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-accent text-sm font-bold uppercase tracking-widest mb-2">{t("exp.subtitle")}</h2>
-                    <h3 className="text-4xl md:text-6xl font-heading font-black text-white uppercase">{t("exp.title")}</h3>
+                    <h3 className="text-4xl md:text-6xl font-heading font-black text-white uppercase">{t("garage.title")}</h3>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

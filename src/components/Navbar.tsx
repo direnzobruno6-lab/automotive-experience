@@ -23,7 +23,7 @@ export default function Navbar() {
     const navLinks = [
         { name: t("nav.home"), href: "/" },
         { name: t("nav.vision"), href: "#vision" },
-        { name: t("nav.services"), href: "#experience" },
+        { name: t("nav.services"), href: "#garage" },
         { name: t("nav.gallery"), href: "#gallery" },
         { name: t("nav.contacts"), href: "#contact" },
     ];
@@ -31,8 +31,8 @@ export default function Navbar() {
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? "bg-black/80 backdrop-blur-lg border-b border-white/5 py-4"
-                    : "bg-transparent py-6"
+                ? "bg-black/80 backdrop-blur-lg border-b border-white/5 py-4"
+                : "bg-transparent py-6"
                 }`}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
