@@ -35,7 +35,7 @@ export default function Hero() {
                     </p>
 
                     <motion.a
-                        href="#experience"
+                        href="#garage"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="inline-block px-8 py-4 bg-accent text-white font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-colors duration-300"
