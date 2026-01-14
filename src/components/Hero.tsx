@@ -1,24 +1,47 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
     const { t } = useLanguage();
+    const [currentImage, setCurrentImage] = useState(0);
+
+    const images = [
+        "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2566&auto=format&fit=crop", // McLaren/Supercar dark
+        "https://images.unsplash.com/photo-1503376763036-066120622c74?q=80&w=2070&auto=format&fit=crop", // Porsche dark
+        "https://images.unsplash.com/photo-1544614629-99609c1fa6e9?q=80&w=2070&auto=format&fit=crop", // Modern abstract fluid car
+        "https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?q=80&w=2067&auto=format&fit=crop", // Mercedes detail
+        "https://images.unsplash.com/photo-1611599553556-912df04f1418?q=80&w=2070&auto=format&fit=crop"  // Ferrari red/dark
+    ];
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentImage((prev) => (prev + 1) % images.length);
+        }, 5000);
+        return () => clearInterval(timer);
+    }, []);
 
     return (
-        <section id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0 z-0">
-                <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
-                    style={{
-                        backgroundImage: 'url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2566&auto=format&fit=crop")', // Placeholder automotive image
-                    }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-                <div className="absolute inset-0 bg-black/40" />
-            </div>
+        <section id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
+            {/* Background Slideshow */}
+            <AnimatePresence mode="popLayout">
+                <motion.div
+                    key={currentImage}
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    animate={{ opacity: 0.6, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.5 }}
+                    className="absolute inset-0 z-0"
+                >
+                    <div
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                        style={{ backgroundImage: `url("${images[currentImage]}")` }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/20" />
+                </motion.div>
+            </AnimatePresence>
 
             {/* Content */}
             <div className="relative z-10 container mx-auto px-6 text-center">
