@@ -1,40 +1,96 @@
 "use client";
 
+import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
 
+const ENGINES = [
+    {
+        type: "Inline-4",
+        name: "Pure Energy",
+        descriptionIt: "L'equilibrio perfetto tra efficienza e prestazioni. Il cuore pulsante delle sportive leggere.",
+        descriptionEn: "The perfect balance between efficiency and performance. The beating heart of lightweight sports cars."
+    },
+    {
+        type: "Inline-6",
+        name: "Perfect Balance",
+        descriptionIt: "Famoso per la sua fluidità naturale e l'erogazione lineare. Un classico intramontabile.",
+        descriptionEn: "Famous for its natural smoothness and linear power delivery. A timeless classic."
+    },
+    {
+        type: "V6",
+        name: "Dynamic Force",
+        descriptionIt: "Compatto e potente, la scelta moderna per le performance ibride di nuova generazione.",
+        descriptionEn: "Compact and powerful, the modern choice for next-generation hybrid performance."
+    },
+    {
+        type: "Boxer",
+        name: "Low Center",
+        descriptionIt: "Baricentro basso per una tenuta di strada ineguagliabile. Il suono inconfondibile della passione.",
+        descriptionEn: "Low center of gravity for unrivaled handling. The unmistakable sound of passion."
+    },
+    {
+        type: "V8",
+        name: "American & Italian Muscle",
+        descriptionIt: "Il re del sound. Rombante, aggressivo, emozionante. L'architettura più amata dagli appassionati.",
+        descriptionEn: "The king of sound. Roaring, aggressive, emotional. The architecture most loved by enthusiasts."
+    },
+    {
+        type: "V10",
+        name: "The Scream",
+        descriptionIt: "Un urlo acuto derivato dalla F1. Raro, esotico e capace di regimi di rotazione incredibili.",
+        descriptionEn: "A high-pitched scream derived from F1. Rare, exotic, and capable of incredible RPMs."
+    },
+    {
+        type: "V12",
+        name: "Symphony of Cylinders",
+        descriptionIt: "La massima espressione del lusso e della potenza. Vellutato ai bassi, devastante agli alti.",
+        descriptionEn: "The ultimate expression of luxury and power. Velvety at low revs, devastating at high revs."
+    },
+    {
+        type: "W16",
+        name: "Engineering Miracle",
+        descriptionIt: "Oltre ogni limite. 16 cilindri, 4 turbo, velocità che sfidano l'aeronautica.",
+        descriptionEn: "Beyond all limits. 16 cylinders, 4 turbos, speeds that challenge aeronautics."
+    }
+];
+
 export default function EngineShowcase() {
-    const engines = [
-        { type: "I4", name: "In-Line 4", desc: "Compact, efficient, widely used." },
-        { type: "I6", name: "In-Line 6", desc: "Perfect balance, smooth power delivery (BMW, Supra)." },
-        { type: "V6", name: "V6 Engine", desc: "Compact power, dominant in F1 turbo era." },
-        { type: "V8", name: "V8 Engine", desc: "The American dream, Italian scream. Muscle and exotic." },
-        { type: "V10", name: "V10 Engine", desc: "F1 harmony. High revving, unique sound (LFA, Viper, F1)." },
-        { type: "V12", name: "V12 Engine", desc: "The King. Perfect primary balance, pure luxury and power." },
-        { type: "W16", name: "W16 Engine", desc: "Bugatti's masterpiece. 4 turbos, 16 cylinders, infinite power." },
-        { type: "Boxer", name: "Flat-6 (Boxer)", desc: "Low center of gravity, Porsche's signature." },
-    ];
+    const { t, language } = useLanguage();
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {engines.map((engine, index) => (
+        <section className="min-h-screen bg-black text-white pt-32 pb-24">
+            <div className="container mx-auto px-6">
                 <motion.div
-                    key={engine.type}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: index * 0.05 }}
-                    className="bg-secondary/20 border border-white/5 p-6 rounded-xl hover:border-accent hover:bg-secondary/40 transition-all cursor-pointer group"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center mb-16"
                 >
-                    <h3 className="text-3xl font-heading font-bold text-accent mb-2">{engine.type}</h3>
-                    <h4 className="text-xl font-bold text-white mb-4">{engine.name}</h4>
-                    <p className="text-gray-400 text-sm group-hover:text-gray-200 transition-colors">
-                        {engine.desc}
+                    <h1 className="text-5xl md:text-7xl font-heading font-black uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 mb-6">
+                        {t("engine.title")}
+                    </h1>
+                    <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                        {t("engine.subtitle")}
                     </p>
-                    {/* Visual placeholder for engine layout */}
-                    <div className="mt-4 h-24 bg-black/50 rounded-lg flex items-center justify-center border border-white/5 group-hover:border-accent/30">
-                        <span className="text-xs text-gray-600 uppercase tracking-widest">Layout Schematic</span>
-                    </div>
                 </motion.div>
-            ))}
-        </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {ENGINES.map((engine, index) => (
+                        <motion.div
+                            key={engine.type}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: index * 0.1 }}
+                            className="bg-secondary/10 border border-white/5 p-8 rounded-2xl hover:bg-secondary/20 hover:border-accent/50 transition-all duration-300 group cursor-default"
+                        >
+                            <div className="text-4xl font-black text-white/10 group-hover:text-white/20 transition-colors mb-4">{engine.type}</div>
+                            <h3 className="text-xl font-bold text-accent mb-2">{engine.name}</h3>
+                            <p className="text-gray-400 text-sm leading-relaxed">
+                                {language === 'it' ? engine.descriptionIt : engine.descriptionEn}
+                            </p>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
     );
 }

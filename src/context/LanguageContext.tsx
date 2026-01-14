@@ -21,8 +21,6 @@ const translations: Record<Language, Record<string, string>> = {
         "nav.gallery": "Gallery",
         "nav.contacts": "Contatti",
         "hero.subtitle": "Lusso. Performance. Innovazione.",
-        "hero.garage": "Il Garage",
-        "hero.start_engine": "Start Engine",
         "footer.rights": "Tutti i diritti riservati.",
         "vision.description": "Noi ridefiniamo il concetto di eccellenza automobilistica. Dalle icone storiche che hanno segnato un'epoca alle hypercar che sfidano le leggi della fisica.",
         "vision.mission": "La nostra missione è offrire un'esperienza senza compromessi, dove la passione incontra l'investimento. Ogni veicolo è una storia, ogni motore un'opera d'arte.",
@@ -30,8 +28,10 @@ const translations: Record<Language, Record<string, string>> = {
         "exp.subtitle": "Investimenti in Movimento",
         "card.value": "Valore Stimato",
         "card.trend": "Trend 5 Anni",
-        "engines.title": "Ingegneria Pura",
-        "engines.subtitle": "Il cuore della performance",
+        "engine.title": "Cuore Meccanico",
+        "engine.subtitle": "Scopri l'architettura della potenza. Dai 4 cilindri ai mostruosi W16.",
+        "hero.start_engine": "Accendi Motori",
+        "hero.garage": "Il Garage",
     },
     en: {
         "nav.home": "Home",
@@ -40,8 +40,6 @@ const translations: Record<Language, Record<string, string>> = {
         "nav.gallery": "Gallery",
         "nav.contacts": "Contacts",
         "hero.subtitle": "Luxury. Performance. Innovation.",
-        "hero.garage": "The Garage",
-        "hero.start_engine": "Start Engine",
         "footer.rights": "All rights reserved.",
         "vision.description": "We redefine the concept of automotive excellence. From historic icons that defined an era to hypercars that defy the laws of physics.",
         "vision.mission": "Our mission is to offer an uncompromising experience, where passion meets investment. Every vehicle is a story, every engine a work of art.",
@@ -49,8 +47,10 @@ const translations: Record<Language, Record<string, string>> = {
         "exp.subtitle": "Moving Investments",
         "card.value": "Estimated Value",
         "card.trend": "5-Year Trend",
-        "engines.title": "Pure Engineering",
-        "engines.subtitle": "The heart of performance",
+        "engine.title": "Mechanical Heart",
+        "engine.subtitle": "Discover the architecture of power. From 4 cylinders to monstrous W16s.",
+        "hero.start_engine": "Start Engine",
+        "hero.garage": "Garage",
     }
 };
 

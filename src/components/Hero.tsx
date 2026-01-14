@@ -34,12 +34,12 @@ export default function Hero() {
                         {t("hero.subtitle")}
                     </p>
 
-                    <div className="flex flex-col md:flex-row gap-4 justify-center">
+                    <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
                         <motion.a
                             href="#garage"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="inline-block px-8 py-4 bg-transparent border border-white text-white font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-colors duration-300"
+                            className="px-8 py-4 border border-white text-white font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-colors duration-300"
                         >
                             {t("hero.garage")}
                         </motion.a>
@@ -47,7 +47,7 @@ export default function Hero() {
                             href="/start-engine"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="inline-block px-8 py-4 bg-accent border border-accent text-white font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-black hover:border-white transition-colors duration-300 shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+                            className="px-8 py-4 bg-accent text-white font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-colors duration-300"
                         >
                             {t("hero.start_engine")}
                         </motion.a>
