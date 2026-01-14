@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Outfit, Inter } from "next/font/google";
+import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const outfit = Outfit({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-heading",
 });
 
 const inter = Inter({
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body
-        className={`${outfit.variable} ${inter.variable} font-sans bg-background text-foreground antialiased selection:bg-accent selection:text-white`}
+        className={`${spaceGrotesk.variable} ${inter.variable} font-sans bg-background text-foreground antialiased selection:bg-accent selection:text-white`}
       >
         <LanguageProvider>
           <Navbar />

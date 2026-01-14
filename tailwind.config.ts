@@ -9,8 +9,8 @@ const config: Config = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ["var(--font-inter)"],
-                heading: ["var(--font-outfit)"],
+                sans: ["var(--font-inter)", "sans-serif"],
+                heading: ["var(--font-heading)", "sans-serif"],
             },
             colors: {
                 background: "var(--background)",
