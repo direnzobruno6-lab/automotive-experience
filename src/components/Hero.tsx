@@ -19,7 +19,7 @@ export default function Hero() {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentImage((prev) => (prev + 1) % images.length);
-        }, 5000);
+        }, 3000);
         return () => clearInterval(timer);
     }, []);
 
