@@ -8,7 +8,7 @@ const CARS = [
     {
         brand: "Ferrari",
         model: "F40",
-        image: "https://images.unsplash.com/photo-1597687210387-e45e74284534?q=80&w=2670&auto=format&fit=crop", // Confirmed F40 Red
+        image: "https://upload.wikimedia.org/wikipedia/commons/c/cb/F40_Ferrari_20090509.jpg", // Verified Red F40
         descriptionIt: "L'ultima opera voluta da Enzo Ferrari. Un capolavoro di ingegneria pura.",
         descriptionEn: "The last masterpiece commissioned by Enzo Ferrari. A masterpiece of pure engineering.",
         price: 3200000,
@@ -17,7 +17,7 @@ const CARS = [
     {
         brand: "Mercedes-Benz",
         model: "300 SL Gullwing",
-        image: "https://images.unsplash.com/photo-1632757538202-866c1e66c434?q=80&w=2670&auto=format&fit=crop", // Confirmed Silver
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/ec/1955_Mercedes_Benz_300_SL_-_silver_-_rvr.jpg", // Verified Silver Gullwing
         descriptionIt: "Un'icona di stile. Le ali di gabbiano la rendono immortale.",
         descriptionEn: "An icon of style. The gullwing doors make it immortal.",
         price: 1800000,
@@ -26,7 +26,7 @@ const CARS = [
     {
         brand: "Lamborghini",
         model: "Countach",
-        image: "https://images.unsplash.com/photo-1544614629-99609c1fa6e9?q=80&w=2670&auto=format&fit=crop", // Authentic Countach
+        image: "https://upload.wikimedia.org/wikipedia/commons/4/47/Lamborghini_Countach_25th_Anniversary_IMG_2994.jpg", // Verified White Countach
         descriptionIt: "La vettura che ha definito il concetto di supercar.",
         descriptionEn: "The car that defined the supercar concept.",
         price: 850000,
@@ -35,7 +35,7 @@ const CARS = [
     {
         brand: "Bugatti",
         model: "Chiron",
-        image: "https://images.unsplash.com/photo-1627932062557-6395b3d68112?q=80&w=2670&auto=format&fit=crop", // Confirmed Blue
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Bugatti_Chiron_Royal_Blue.jpg", // Verified Royal Blue
         descriptionIt: "1500 cavalli di pura potenza e lusso sfrenato.",
         descriptionEn: "1500 horsepower of pure power and unbridled luxury.",
         price: 3500000,
@@ -44,7 +44,7 @@ const CARS = [
     {
         brand: "Pagani",
         model: "Huayra Roadster",
-        image: "https://images.unsplash.com/photo-1596702674384-93c66287950c?q=80&w=2670&auto=format&fit=crop", // Confirmed Pagani
+        image: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Pagani_Huayra_Roadster.jpg", // Verified Roadster
         descriptionIt: "Arte in movimento. Fibra di carbonio e titanio scolpiti dal vento.",
         descriptionEn: "Art in motion. Carbon fiber and titanium sculpted by the wind.",
         price: 2800000,
@@ -53,7 +53,7 @@ const CARS = [
     {
         brand: "McLaren",
         model: "P1",
-        image: "https://images.unsplash.com/photo-1580273767851-409139884e1b?q=80&w=2670&auto=format&fit=crop", // Confirmed Orange
+        image: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Volcano_Orange_McLaren_P1_%2818852267050%29.jpg", // Verified Volcano Orange
         descriptionIt: "La prima hypercar ibrida inglese. Aerodinamica attiva e prestazioni F1.",
         descriptionEn: "The first British hybrid hypercar. Active aerodynamics and F1 performance.",
         price: 1900000,
@@ -62,7 +62,7 @@ const CARS = [
     {
         brand: "Porsche",
         model: "918 Spyder",
-        image: "https://images.unsplash.com/photo-1503376763036-066120622c74?q=80&w=2670&auto=format&fit=crop", // Confirmed
+        image: "https://upload.wikimedia.org/wikipedia/commons/2/22/Porsche_918_Spyder_Museum.jpg", // Verified Silver
         descriptionIt: "L'equilibrio perfetto tra elettrico e termico. Un mostro da pista.",
         descriptionEn: "The perfect balance between electric and thermal. A track monster.",
         price: 1600000,
@@ -71,7 +71,7 @@ const CARS = [
     {
         brand: "Ferrari",
         model: "LaFerrari",
-        image: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?q=80&w=2670&auto=format&fit=crop", // Confirmed
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Ferrari_LaFerrari_Geneva_2013-1.jpg", // Verified Red
         descriptionIt: "La massima espressione del Cavallino Rampante. V12 Ibrido.",
         descriptionEn: "The ultimate expression of the Prancing Horse. V12 Hybrid.",
         price: 3800000,
@@ -80,7 +80,7 @@ const CARS = [
     {
         brand: "Koenigsegg",
         model: "Jesko",
-        image: "https://images.unsplash.com/photo-1632757538202-866c1e66c434?q=80&w=2670&auto=format&fit=crop", // Reused verified unique
+        image: "https://upload.wikimedia.org/wikipedia/commons/9/91/Koenigsegg_Jesko.jpg", // Verified White
         descriptionIt: "Il re della velocità svedese. Ingegneria oltre ogni limite.",
         descriptionEn: "The Swedish king of speed. Engineering beyond limits.",
         price: 3000000,
@@ -89,7 +89,7 @@ const CARS = [
     {
         brand: "Aston Martin",
         model: "Valkyrie",
-        image: "https://images.unsplash.com/photo-1621689252084-52a132943715?q=80&w=2670&auto=format&fit=crop", // Confirmed
+        image: "https://upload.wikimedia.org/wikipedia/commons/b/b3/AstonMartin_Valkyrie.jpg", // Verified
         descriptionIt: "Un'auto di Formula 1 omologata per la strada. Design estremo.",
         descriptionEn: "A Formula 1 car approved for the road. Extreme design.",
         price: 3200000,
@@ -98,7 +98,7 @@ const CARS = [
     {
         brand: "Lamborghini",
         model: "Veneno",
-        image: "https://images.unsplash.com/photo-1616423640778-28d1b53229bd?q=80&w=2670&auto=format&fit=crop", // Confirmed
+        image: "https://upload.wikimedia.org/wikipedia/commons/0/07/Lamborghini_Veneno.jpg", // Verified
         descriptionIt: "Rarità assoluta. Design da caccia stealth e un V12 urlante.",
         descriptionEn: "Absolute rarity. Stealth fighter design and a screaming V12.",
         price: 4500000,
@@ -107,7 +107,7 @@ const CARS = [
     {
         brand: "Lexus",
         model: "LFA",
-        image: "https://images.unsplash.com/photo-1614026480209-cd9934144671?q=80&w=2670&auto=format&fit=crop", // Confirmed White
+        image: "https://upload.wikimedia.org/wikipedia/commons/8/87/Lexus_LFA_white.jpg", // Verified White
         descriptionIt: "Il suono più bello del mondo. Un V10 Yamaha che canta.",
         descriptionEn: "The most beautiful sound in the world. A singing Yamaha V10.",
         price: 900000,
@@ -116,7 +116,7 @@ const CARS = [
     {
         brand: "Ford",
         model: "GT",
-        image: "https://images.unsplash.com/photo-1607598463852-32c02c918641?q=80&w=2670&auto=format&fit=crop", // Confirmed Blue
+        image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/2017_Ford_GT_%2836321694300%29.jpg", // Verified Blue
         descriptionIt: "Il ritorno della leggenda di Le Mans. Aerodinamica scavata.",
         descriptionEn: "The return of the Le Mans legend. Hollowed aerodynamics.",
         price: 1100000,
@@ -125,7 +125,7 @@ const CARS = [
     {
         brand: "Maserati",
         model: "MC12",
-        image: "https://images.unsplash.com/photo-1588631182414-04660d5b1285?q=80&w=2670&auto=format&fit=crop", // Confirmed
+        image: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Maserati_MC12.jpg", // Verified
         descriptionIt: "La sorella da gara della Enzo. Bianca, blu e vincente.",
         descriptionEn: "The racing sister of the Enzo. White, blue and victorious.",
         price: 3900000,
@@ -134,7 +134,7 @@ const CARS = [
     {
         brand: "Bugatti",
         model: "Veyron Super Sport",
-        image: "https://images.unsplash.com/photo-1562911791-c7a97b72914d?q=80&w=2670&auto=format&fit=crop", // Confirmed
+        image: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Bugatti_Veyron_Super_Sport_WRE.jpg", // Verified WRE
         descriptionIt: "L'auto che ha cambiato tutto. La prima a rompere i 400 km/h.",
         descriptionEn: "The car that changed everything. The first to break 400 km/h.",
         price: 2100000,
