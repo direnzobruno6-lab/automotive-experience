@@ -1,14 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   --background: #0a0a0a;
   --foreground: #ededed;
-  
+
   --primary: #ededed;
-  --secondary: #1f2937; /* gray-800 */
-  --accent: #3b82f6; /* blue-500 */
+  --secondary: #1f2937;
+  /* gray-800 */
+  --accent: #3b82f6;
+  /* blue-500 */
 }
 
 @layer base {
