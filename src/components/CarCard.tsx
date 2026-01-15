@@ -27,13 +27,11 @@ export default function CarCard({ car, index }: { car: CarProps; index: number }
             transition={{ duration: 0.6, delay: index * 0.1 }}
             className="bg-secondary/30 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden hover:border-accent/50 transition-colors duration-500 group"
         >
-            <div className="h-64 overflow-hidden relative">
-                <Image
+                <img
                     src={car.image}
                     alt={`${car.brand} ${car.model}`}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-4 left-4 z-10">
@@ -59,6 +57,6 @@ export default function CarCard({ car, index }: { car: CarProps; index: number }
                     <ValueChart data={car.chartData} />
                 </div>
             </div>
-        </motion.div>
+        </motion.div >
     );
 }
