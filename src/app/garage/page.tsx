@@ -8,7 +8,7 @@ const CARS = [
     {
         brand: "Ferrari",
         model: "F40",
-        image: "https://images.unsplash.com/photo-1597687210387-e45e74284534?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/f40.jpg",
         descriptionIt: "L'ultima opera voluta da Enzo Ferrari. Un capolavoro di ingegneria pura.",
         descriptionEn: "The last masterpiece commissioned by Enzo Ferrari. A masterpiece of pure engineering.",
         price: 3200000,
@@ -17,7 +17,7 @@ const CARS = [
     {
         brand: "Mercedes-Benz",
         model: "300 SL Gullwing",
-        image: "https://images.unsplash.com/photo-1632757538202-866c1e66c434?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/300sl.jpg",
         descriptionIt: "Un'icona di stile. Le ali di gabbiano la rendono immortale.",
         descriptionEn: "An icon of style. The gullwing doors make it immortal.",
         price: 1800000,
@@ -26,7 +26,7 @@ const CARS = [
     {
         brand: "Lamborghini",
         model: "Countach",
-        image: "https://images.unsplash.com/photo-1544614629-99609c1fa6e9?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/countach.jpg",
         descriptionIt: "La vettura che ha definito il concetto di supercar.",
         descriptionEn: "The car that defined the supercar concept.",
         price: 850000,
@@ -35,7 +35,7 @@ const CARS = [
     {
         brand: "Bugatti",
         model: "Chiron",
-        image: "https://images.unsplash.com/photo-1627932062557-6395b3d68112?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/chiron.jpg",
         descriptionIt: "1500 cavalli di pura potenza e lusso sfrenato.",
         descriptionEn: "1500 horsepower of pure power and unbridled luxury.",
         price: 3500000,
@@ -44,7 +44,7 @@ const CARS = [
     {
         brand: "Pagani",
         model: "Huayra Roadster",
-        image: "https://images.unsplash.com/photo-1596702674384-93c66287950c?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/huayra.jpg",
         descriptionIt: "Arte in movimento. Fibra di carbonio e titanio scolpiti dal vento.",
         descriptionEn: "Art in motion. Carbon fiber and titanium sculpted by the wind.",
         price: 2800000,
@@ -53,7 +53,7 @@ const CARS = [
     {
         brand: "McLaren",
         model: "P1",
-        image: "https://images.unsplash.com/photo-1580273767851-409139884e1b?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/p1.jpg",
         descriptionIt: "La prima hypercar ibrida inglese. Aerodinamica attiva e prestazioni F1.",
         descriptionEn: "The first British hybrid hypercar. Active aerodynamics and F1 performance.",
         price: 1900000,
@@ -62,7 +62,7 @@ const CARS = [
     {
         brand: "Porsche",
         model: "918 Spyder",
-        image: "https://images.unsplash.com/photo-1503376763036-066120622c74?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/918.jpg",
         descriptionIt: "L'equilibrio perfetto tra elettrico e termico. Un mostro da pista.",
         descriptionEn: "The perfect balance between electric and thermal. A track monster.",
         price: 1600000,
@@ -71,7 +71,7 @@ const CARS = [
     {
         brand: "Ferrari",
         model: "LaFerrari",
-        image: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/laferrari.jpg",
         descriptionIt: "La massima espressione del Cavallino Rampante. V12 Ibrido.",
         descriptionEn: "The ultimate expression of the Prancing Horse. V12 Hybrid.",
         price: 3800000,
@@ -80,7 +80,7 @@ const CARS = [
     {
         brand: "Koenigsegg",
         model: "Jesko",
-        image: "https://images.unsplash.com/photo-1621689252084-52a132943715?auto=format&fit=crop&q=80&w=800", // Using a validated ID
+        image: "/images/garage/jesko.jpg",
         descriptionIt: "Il re della velocità svedese. Ingegneria oltre ogni limite.",
         descriptionEn: "The Swedish king of speed. Engineering beyond limits.",
         price: 3000000,
@@ -89,7 +89,7 @@ const CARS = [
     {
         brand: "Aston Martin",
         model: "Valkyrie",
-        image: "https://images.unsplash.com/photo-1621689252084-52a132943715?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/valkyrie.jpg",
         descriptionIt: "Un'auto di Formula 1 omologata per la strada. Design estremo.",
         descriptionEn: "A Formula 1 car approved for the road. Extreme design.",
         price: 3200000,
@@ -98,7 +98,7 @@ const CARS = [
     {
         brand: "Lamborghini",
         model: "Veneno",
-        image: "https://images.unsplash.com/photo-1616423640778-28d1b53229bd?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/veneno.jpg",
         descriptionIt: "Rarità assoluta. Design da caccia stealth e un V12 urlante.",
         descriptionEn: "Absolute rarity. Stealth fighter design and a screaming V12.",
         price: 4500000,
@@ -107,7 +107,7 @@ const CARS = [
     {
         brand: "Lexus",
         model: "LFA",
-        image: "https://images.unsplash.com/photo-1614026480209-cd9934144671?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/lfa.jpg",
         descriptionIt: "Il suono più bello del mondo. Un V10 Yamaha che canta.",
         descriptionEn: "The most beautiful sound in the world. A singing Yamaha V10.",
         price: 900000,
@@ -116,7 +116,7 @@ const CARS = [
     {
         brand: "Ford",
         model: "GT",
-        image: "https://images.unsplash.com/photo-1607598463852-32c02c918641?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/fordgt.jpg",
         descriptionIt: "Il ritorno della leggenda di Le Mans. Aerodinamica scavata.",
         descriptionEn: "The return of the Le Mans legend. Hollowed aerodynamics.",
         price: 1100000,
@@ -125,7 +125,7 @@ const CARS = [
     {
         brand: "Maserati",
         model: "MC12",
-        image: "https://images.unsplash.com/photo-1588631182414-04660d5b1285?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/mc12.jpg",
         descriptionIt: "La sorella da gara della Enzo. Bianca, blu e vincente.",
         descriptionEn: "The racing sister of the Enzo. White, blue and victorious.",
         price: 3900000,
@@ -134,7 +134,7 @@ const CARS = [
     {
         brand: "Bugatti",
         model: "Veyron Super Sport",
-        image: "https://images.unsplash.com/photo-1562911791-c7a97b72914d?auto=format&fit=crop&q=80&w=800",
+        image: "/images/garage/veyron.jpg",
         descriptionIt: "L'auto che ha cambiato tutto. La prima a rompere i 400 km/h.",
         descriptionEn: "The car that changed everything. The first to break 400 km/h.",
         price: 2100000,
