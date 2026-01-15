@@ -13,7 +13,17 @@ export default function Hero() {
         "https://images.unsplash.com/photo-1503376763036-066120622c74?q=80&w=2070&auto=format&fit=crop", // Porsche dark
         "https://images.unsplash.com/photo-1544614629-99609c1fa6e9?q=80&w=2070&auto=format&fit=crop", // Modern abstract fluid car
         "https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?q=80&w=2067&auto=format&fit=crop", // Mercedes detail
-        "https://images.unsplash.com/photo-1611599553556-912df04f1418?q=80&w=2070&auto=format&fit=crop"  // Ferrari red/dark
+        "https://images.unsplash.com/photo-1611599553556-912df04f1418?q=80&w=2070&auto=format&fit=crop", // Ferrari red/dark
+        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2070&auto=format&fit=crop", // Chevrolet Corvette
+        "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2070&auto=format&fit=crop", // Ferrari 488 Pista
+        "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=2069&auto=format&fit=crop", // Audi R8
+        "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=2070&auto=format&fit=crop", // Lamborghini Huracan
+        "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop", // Dodge Challenger
+        "https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=2070&auto=format&fit=crop", // Rolls Royce
+        "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=2070&auto=format&fit=crop", // Mercedes AMG
+        "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2070&auto=format&fit=crop", // Classic Mustang
+        "https://images.unsplash.com/photo-1553440291-6c2cb5d56df6?q=80&w=2070&auto=format&fit=crop", // Modern Sports Car
+        "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=2070&auto=format&fit=crop"  // Lamborghini Aventador
     ];
 
     useEffect(() => {
