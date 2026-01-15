@@ -58,14 +58,23 @@ const ENGINES = [
 export default function EngineShowcase() {
     const { t, language } = useLanguage();
     const [activeEngine, setActiveEngine] = useState<string | null>(null);
+    const audioRef = useRef<HTMLAudioElement | null>(null);
 
     const handleEngineClick = (engine: typeof ENGINES[0]) => {
+        // Stop currently playing audio if exists
+        if (audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;
+        }
+
         setActiveEngine(engine.name);
 
         // Map engine type to filename, removing special chars and expanding abbreviations
         const filename = engine.type.toLowerCase().replace(/[^a-z0-9]/g, "");
         const audio = new Audio(`/sounds/${filename}.mp3`);
         audio.volume = 0.5;
+
+        audioRef.current = audio;
         audio.play().catch(e => console.log("Audio not found or blocked:", e));
     };
 
