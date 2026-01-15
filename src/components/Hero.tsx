@@ -69,10 +69,10 @@ export default function Hero() {
 
                     <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
                         <motion.a
-                            href="#garage"
+                            href="/garage"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-8 py-4 border border-white text-white font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-colors duration-300"
+                            className="px-8 py-4 bg-red-600 text-white font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-colors duration-300"
                         >
                             {t("hero.garage")}
                         </motion.a>
