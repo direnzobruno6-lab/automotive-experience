@@ -28,7 +28,7 @@ export default function CarCard({ car, index }: { car: CarProps; index: number }
             <div className="h-64 overflow-hidden relative">
                 <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                    style={{ backgroundImage: `url(${car.image})` }}
+                    style={{ backgroundImage: `url('${car.image}')` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-4 left-4">
