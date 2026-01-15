@@ -27,6 +27,7 @@ export default function CarCard({ car, index }: { car: CarProps; index: number }
             transition={{ duration: 0.6, delay: index * 0.1 }}
             className="bg-secondary/30 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden hover:border-accent/50 transition-colors duration-500 group"
         >
+            <div className="h-64 overflow-hidden relative">
                 <img
                     src={car.image}
                     alt={`${car.brand} ${car.model}`}
