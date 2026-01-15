@@ -173,8 +173,8 @@ export default function GaragePage() {
                         key={brand}
                         className="mb-20"
                     >
-                        <h4 className="text-3xl font-heading font-bold text-white mb-8 border-b border-gray-800 pb-4 flex items-center">
-                            <span className="w-2 h-8 bg-accent mr-4"></span>
+                        <h4 className="text-3xl font-heading font-bold text-red-600 mb-8 border-b border-gray-800 pb-4 flex items-center">
+                            <span className="w-2 h-8 bg-white mr-4"></span>
                             {brand}
                         </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
