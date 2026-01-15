@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const ENGINES = [
     {
@@ -59,6 +59,16 @@ export default function EngineShowcase() {
     const { t, language } = useLanguage();
     const [activeEngine, setActiveEngine] = useState<string | null>(null);
     const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    // Cleanup audio on unmount (navigation away)
+    useEffect(() => {
+        return () => {
+            if (audioRef.current) {
+                audioRef.current.pause();
+                audioRef.current.currentTime = 0;
+            }
+        };
+    }, []);
 
     const handleEngineClick = (engine: typeof ENGINES[0]) => {
         // Stop currently playing audio if exists
