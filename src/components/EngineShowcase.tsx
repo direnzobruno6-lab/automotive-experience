@@ -8,56 +8,48 @@ const ENGINES = [
     {
         type: "Inline-4",
         name: "Pure Energy",
-        pitch: 0.8,
         descriptionIt: "L'equilibrio perfetto tra efficienza e prestazioni. Il cuore pulsante delle sportive leggere.",
         descriptionEn: "The perfect balance between efficiency and performance. The beating heart of lightweight sports cars."
     },
     {
         type: "Inline-6",
         name: "Perfect Balance",
-        pitch: 0.9,
         descriptionIt: "Famoso per la sua fluidità naturale e l'erogazione lineare. Un classico intramontabile.",
         descriptionEn: "Famous for its natural smoothness and linear power delivery. A timeless classic."
     },
     {
         type: "V6",
         name: "Dynamic Force",
-        pitch: 0.95,
         descriptionIt: "Compatto e potente, la scelta moderna per le performance ibride di nuova generazione.",
         descriptionEn: "Compact and powerful, the modern choice for next-generation hybrid performance."
     },
     {
         type: "Boxer",
         name: "Low Center",
-        pitch: 0.75,
         descriptionIt: "Baricentro basso per una tenuta di strada ineguagliabile. Il suono inconfondibile della passione.",
         descriptionEn: "Low center of gravity for unrivaled handling. The unmistakable sound of passion."
     },
     {
         type: "V8",
         name: "American & Italian Muscle",
-        pitch: 0.6,
         descriptionIt: "Il re del sound. Rombante, aggressivo, emozionante. L'architettura più amata dagli appassionati.",
         descriptionEn: "The king of sound. Roaring, aggressive, emotional. The architecture most loved by enthusiasts."
     },
     {
         type: "V10",
         name: "The Scream",
-        pitch: 1.1,
         descriptionIt: "Un urlo acuto derivato dalla F1. Raro, esotico e capace di regimi di rotazione incredibili.",
         descriptionEn: "A high-pitched scream derived from F1. Rare, exotic, and capable of incredible RPMs."
     },
     {
         type: "V12",
         name: "Symphony of Cylinders",
-        pitch: 1.2,
         descriptionIt: "La massima espressione del lusso e della potenza. Vellutato ai bassi, devastante agli alti.",
         descriptionEn: "The ultimate expression of luxury and power. Velvety at low revs, devastating at high revs."
     },
     {
         type: "W16",
         name: "Engineering Miracle",
-        pitch: 0.5,
         descriptionIt: "Oltre ogni limite. 16 cilindri, 4 turbo, velocità che sfidano l'aeronautica.",
         descriptionEn: "Beyond all limits. 16 cylinders, 4 turbos, speeds that challenge aeronautics."
     }
@@ -87,20 +79,10 @@ export default function EngineShowcase() {
 
         setActiveEngine(engine.name);
 
-        // Use the master high-quality sample for all, but modulate pitch
-        // This ensures reliability while providing distinct characteristics
-        const audio = new Audio(`/sounds/v12.mp3`); // Using v12.mp3 (aggressive motorcycle) as master base
-
-        // Preserve pitch processing (for browsers that support it, though simple rate change shifts pitch naturally)
-        audio.playbackRate = engine.pitch;
-        // @ts-ignore - mozPreservesPitch is non-standard but useful for older Firefox
-        if (audio.mozPreservesPitch) audio.mozPreservesPitch = false;
-        // @ts-ignore
-        if (audio.webkitPreservesPitch) audio.webkitPreservesPitch = false;
-        // Standard (though typically true by default, we rely on the speed change affecting pitch naturally)
-        audio.preservesPitch = false;
-
-        audio.volume = 0.6;
+        // Map engine type to filename, removing special chars and expanding abbreviations
+        const filename = engine.type.toLowerCase().replace(/[^a-z0-9]/g, "");
+        const audio = new Audio(`/sounds/${filename}.mp3`);
+        audio.volume = 0.5;
 
         audioRef.current = audio;
         audio.play().catch(e => console.log("Audio not found or blocked:", e));
