@@ -17,15 +17,36 @@ export interface Car {
     };
 }
 
-export const CARS: Car[] = [
+interface CarConfig {
+    brand: string;
+    model: string;
+    image: string;
+    descriptionIt: string;
+    descriptionEn: string;
+    basePrice: number; // Price in baseYear
+    baseYear: number;
+    growthRate: number; // e.g. 0.15 for 15% annual growth
+    imagePosition?: string;
+    details: {
+        exteriorIt: string;
+        exteriorEn: string;
+        interiorIt: string;
+        interiorEn: string;
+        engineIt: string;
+        engineEn: string;
+    };
+}
+
+const CAR_CONFIGS: CarConfig[] = [
     {
         brand: "Ferrari",
         model: "F40",
         image: "/images/garage/f40.jpg",
         descriptionIt: "L'ultima opera voluta da Enzo Ferrari. Un capolavoro di ingegneria pura.",
         descriptionEn: "The last masterpiece commissioned by Enzo Ferrari. A masterpiece of pure engineering.",
-        price: 3400000,
-        chartData: [{ year: '2015', value: 1.2 }, { year: '2020', value: 1.8 }, { year: '2025', value: 3.4 }],
+        basePrice: 1200000,
+        baseYear: 2015,
+        growthRate: 0.12, // High growth
         details: {
             exteriorIt: "Carrozzeria in kevlar e fibra di carbonio, vernice Rosso Corsa, alettone posteriore iconico e feritoie trasparenti in Lexan per il motore.",
             exteriorEn: "Kevlar and carbon fiber bodywork, Rosso Corsa paint, iconic rear wing and transparent Lexan engine louvers.",
@@ -41,8 +62,9 @@ export const CARS: Car[] = [
         image: "/images/garage/300sl_authentic.jpg",
         descriptionIt: "Un'icona di stile. Le ali di gabbiano la rendono immortale.",
         descriptionEn: "An icon of style. The gullwing doors make it immortal.",
-        price: 2100000,
-        chartData: [{ year: '2015', value: 1.1 }, { year: '2020', value: 1.4 }, { year: '2025', value: 2.1 }],
+        basePrice: 1100000,
+        baseYear: 2015,
+        growthRate: 0.08,
         details: {
             exteriorIt: "Argento metallizzato, porte ad ali di gabbiano necessarie per il telaio tubolare alto, linee eleganti e senza tempo.",
             exteriorEn: "Silver metallic, gullwing doors necessitated by the high tubular chassis, elegant and timeless lines.",
@@ -58,8 +80,9 @@ export const CARS: Car[] = [
         image: "/images/garage/countach_authentic.jpg",
         descriptionIt: "La vettura che ha definito il concetto di supercar.",
         descriptionEn: "The car that defined the supercar concept.",
-        price: 950000,
-        chartData: [{ year: '2015', value: 0.35 }, { year: '2020', value: 0.5 }, { year: '2025', value: 0.95 }],
+        basePrice: 350000,
+        baseYear: 2015,
+        growthRate: 0.11,
         details: {
             exteriorIt: "Design a cuneo di Marcello Gandini, porte a forbice, passaruota larghi e alettone opzionale iconico.",
             exteriorEn: "Wedge design by Marcello Gandini, scissor doors, wide wheel arches and iconic optional wing.",
@@ -75,8 +98,9 @@ export const CARS: Car[] = [
         image: "/images/garage/chiron_authentic.jpg",
         descriptionIt: "1500 cavalli di pura potenza e lusso sfrenato.",
         descriptionEn: "1500 horsepower of pure power and unbridled luxury.",
-        price: 3800000,
-        chartData: [{ year: '2018', value: 2.9 }, { year: '2021', value: 3.2 }, { year: '2025', value: 3.8 }],
+        basePrice: 2400000,
+        baseYear: 2016, // Launched later
+        growthRate: 0.06,
         details: {
             exteriorIt: "Design a ferro di cavallo laterale (C-bar), verniciatura bicolore, aerodinamica attiva posteriore.",
             exteriorEn: "C-bar side design, two-tone paintwork, active rear aerodynamics.",
@@ -92,8 +116,9 @@ export const CARS: Car[] = [
         image: "/images/garage/huayra_authentic.jpg",
         descriptionIt: "Arte in movimento. Fibra di carbonio e titanio scolpiti dal vento.",
         descriptionEn: "Art in motion. Carbon fiber and titanium sculpted by the wind.",
-        price: 3200000,
-        chartData: [{ year: '2017', value: 2.4 }, { year: '2021', value: 2.7 }, { year: '2025', value: 3.2 }],
+        basePrice: 2400000,
+        baseYear: 2017,
+        growthRate: 0.05,
         details: {
             exteriorIt: "Carbo-titanio a vista, flap aerodinamici attivi anteriori e posteriori, specchietti scultorei.",
             exteriorEn: "Exposed Carbotanium, active front and rear aerodynamic flaps, sculptural mirrors.",
@@ -109,8 +134,9 @@ export const CARS: Car[] = [
         image: "/images/garage/p1_authentic.jpg",
         descriptionIt: "La prima hypercar ibrida inglese. Aerodinamica attiva e prestazioni F1.",
         descriptionEn: "The first British hybrid hypercar. Active aerodynamics and F1 performance.",
-        price: 2200000,
-        chartData: [{ year: '2015', value: 1.4 }, { year: '2020', value: 1.6 }, { year: '2025', value: 2.2 }],
+        basePrice: 1400000,
+        baseYear: 2015,
+        growthRate: 0.06,
         imagePosition: "50% 80%",
         details: {
             exteriorIt: "Disegnata dall'aria: forma a goccia, alettone posteriore massiccio estensibile, carrozzeria in carbonio.",
@@ -127,8 +153,9 @@ export const CARS: Car[] = [
         image: "/images/garage/918_authentic.jpg",
         descriptionIt: "L'equilibrio perfetto tra elettrico e termico. Un mostro da pista.",
         descriptionEn: "The perfect balance between electric and thermal. A track monster.",
-        price: 1950000,
-        chartData: [{ year: '2015', value: 1.1 }, { year: '2020', value: 1.3 }, { year: '2025', value: 1.95 }],
+        basePrice: 1100000,
+        baseYear: 2015,
+        growthRate: 0.08,
         details: {
             exteriorIt: "Scarichi alti ('Top Pipes'), silhouette bassa e larga, aerodinamica attiva Weissach.",
             exteriorEn: "Top Pipes exhaust, low and wide silhouette, active Weissach aerodynamics.",
@@ -144,8 +171,9 @@ export const CARS: Car[] = [
         image: "/images/garage/laferrari_authentic.jpg",
         descriptionIt: "La massima espressione del Cavallino Rampante. V12 Ibrido.",
         descriptionEn: "The ultimate expression of the Prancing Horse. V12 Hybrid.",
-        price: 4200000,
-        chartData: [{ year: '2015', value: 2.5 }, { year: '2020', value: 3.1 }, { year: '2025', value: 4.2 }],
+        basePrice: 2500000,
+        baseYear: 2015,
+        growthRate: 0.07,
         imagePosition: "50% 80%",
         details: {
             exteriorIt: "Design estremo F1, specchietti lunghi, aerodinamica attiva integrata nel fondo piatto.",
@@ -162,8 +190,9 @@ export const CARS: Car[] = [
         image: "/images/garage/jesko_authentic.jpg",
         descriptionIt: "Il re della velocità svedese. Ingegneria oltre ogni limite.",
         descriptionEn: "The Swedish king of speed. Engineering beyond limits.",
-        price: 4100000,
-        chartData: [{ year: '2020', value: 3.0 }, { year: '2022', value: 3.4 }, { year: '2025', value: 4.1 }],
+        basePrice: 3000000,
+        baseYear: 2020,
+        growthRate: 0.07,
         details: {
             exteriorIt: "Alettone posteriore a boomerang enorme, splitter anteriore aggressivo, porte a elica.",
             exteriorEn: "Massive boomerang rear wing, aggressive front splitter, dihedral synchro-helix doors.",
@@ -179,8 +208,9 @@ export const CARS: Car[] = [
         image: "/images/garage/valkyrie.jpg",
         descriptionIt: "Un'auto di Formula 1 omologata per la strada. Design estremo.",
         descriptionEn: "A Formula 1 car approved for the road. Extreme design.",
-        price: 3500000,
-        chartData: [{ year: '2021', value: 3.0 }, { year: '2023', value: 3.2 }, { year: '2025', value: 3.5 }],
+        basePrice: 3000000,
+        baseYear: 2021,
+        growthRate: 0.04,
         details: {
             exteriorIt: "Fondo piatto con tunnel Venturi enormi, cabina a goccia, niente paraurti tradizionale.",
             exteriorEn: "Flat floor with massive Venturi tunnels, teardrop cabin, no traditional bumpers.",
@@ -196,8 +226,9 @@ export const CARS: Car[] = [
         image: "/images/garage/veneno.jpg",
         descriptionIt: "Rarità assoluta. Design da caccia stealth e un V12 urlante.",
         descriptionEn: "Absolute rarity. Stealth fighter design and a screaming V12.",
-        price: 9500000,
-        chartData: [{ year: '2014', value: 4.0 }, { year: '2019', value: 6.5 }, { year: '2025', value: 9.5 }],
+        basePrice: 4000000,
+        baseYear: 2014,
+        growthRate: 0.11, // Massive growth
         details: {
             exteriorIt: "Pinna dorsale centrale, estetica da prototipo Le Mans, prese d'aria massicce.",
             exteriorEn: "Central dorsal fin, Le Mans prototype aesthetics, massive air intakes.",
@@ -213,8 +244,9 @@ export const CARS: Car[] = [
         image: "/images/garage/lfa_authentic.jpg",
         descriptionIt: "Il suono più bello del mondo. Un V10 Yamaha che canta.",
         descriptionEn: "The most beautiful sound in the world. A singing Yamaha V10.",
-        price: 1300000,
-        chartData: [{ year: '2015', value: 0.38 }, { year: '2020', value: 0.7 }, { year: '2025', value: 1.3 }],
+        basePrice: 380000,
+        baseYear: 2015,
+        growthRate: 0.15, // Cult status explosion
         details: {
             exteriorIt: "Telaio in CFRP (carbonio), prese d'aria posteriori integrate, alettone attivo.",
             exteriorEn: "CFRP (carbon) chassis, integrated rear intakes, active wing.",
@@ -230,8 +262,9 @@ export const CARS: Car[] = [
         image: "/images/garage/fordgt_authentic.jpg",
         descriptionIt: "Il ritorno della leggenda di Le Mans. Aerodinamica scavata.",
         descriptionEn: "The return of the Le Mans legend. Hollowed aerodynamics.",
-        price: 1400000,
-        chartData: [{ year: '2017', value: 0.5 }, { year: '2021', value: 0.9 }, { year: '2025', value: 1.4 }],
+        basePrice: 500000,
+        baseYear: 2017,
+        growthRate: 0.12,
         imagePosition: "50% 80%",
         details: {
             exteriorIt: "Canali aerodinamici 'Flying Buttress' che attraversano la carrozzeria posteriore.",
@@ -248,8 +281,9 @@ export const CARS: Car[] = [
         image: "/images/garage/mc12_authentic.jpg",
         descriptionIt: "La sorella da gara della Enzo. Bianca, blu e vincente.",
         descriptionEn: "The racing sister of the Enzo. White, blue and victorious.",
-        price: 5200000,
-        chartData: [{ year: '2015', value: 1.8 }, { year: '2020', value: 3.5 }, { year: '2025', value: 5.2 }],
+        basePrice: 1800000,
+        baseYear: 2015,
+        growthRate: 0.13,
         imagePosition: "50% 80%",
         details: {
             exteriorIt: "Lunghissima (oltre 5m), livrea bianco-blu, tetto targa rimovibile.",
@@ -266,8 +300,9 @@ export const CARS: Car[] = [
         image: "/images/garage/veyron_authentic.jpg",
         descriptionIt: "L'auto che ha cambiato tutto. La prima a rompere i 400 km/h.",
         descriptionEn: "The car that changed everything. The first to break 400 km/h.",
-        price: 2500000,
-        chartData: [{ year: '2015', value: 1.5 }, { year: '2020', value: 1.9 }, { year: '2025', value: 2.5 }],
+        basePrice: 1500000,
+        baseYear: 2015,
+        growthRate: 0.05,
         details: {
             exteriorIt: "Forma a uovo levigato, prese d'aria NACA sul tetto, colorazione World Record (nero/arancio).",
             exteriorEn: "Smoothed egg shape, roof NACA ducts, World Record livery (black/orange).",
@@ -278,3 +313,62 @@ export const CARS: Car[] = [
         }
     }
 ];
+
+function calculateCurrentValue(basePrice: number, growthRate: number, yearsPassed: number): number {
+    // Compound interest formula: P = P0 * (1 + r)^t
+    return Math.floor(basePrice * Math.pow(1 + growthRate, yearsPassed));
+}
+
+function generateDynamicData(): Car[] {
+    const currentYear = new Date().getFullYear();
+
+    return CAR_CONFIGS.map(config => {
+        // Generate chart data up to next year or current year + 1 to show forecast
+        const chartData = [];
+        const startChartYear = config.baseYear;
+        const endChartYear = currentYear;
+
+        // Generate points every ~2-3 years to keep chart clean, but ensure current year is included
+        for (let y = startChartYear; y <= endChartYear; y++) {
+            // Simple "noisy" growth to make it look realistic (not a perfect curve)
+            // We use sin() based on year char code to be deterministic but readable
+            const noise = (Math.sin(y * 99) * 0.05); // +/- 5% variance
+            const yearsPassed = y - config.baseYear;
+            const rawValue = calculateCurrentValue(config.basePrice, config.growthRate + (noise * 0.2), yearsPassed);
+
+            // Push specific years or just start, mid, end
+            if (y === startChartYear || y === endChartYear || (y - startChartYear) % 4 === 0) {
+                chartData.push({
+                    year: y.toString(),
+                    value: parseFloat((rawValue / 1000000).toFixed(2)) // Convert to Millions with 1 decimal
+                });
+            }
+        }
+
+        // Ensure the last point is exactly current year price
+        const currentPrice = calculateCurrentValue(config.basePrice, config.growthRate, currentYear - config.baseYear);
+
+        // Update last chart point to match exactly
+        if (chartData.length > 0) {
+            chartData[chartData.length - 1] = {
+                year: currentYear.toString(),
+                value: parseFloat((currentPrice / 1000000).toFixed(2))
+            };
+        }
+
+        return {
+            brand: config.brand,
+            model: config.model,
+            image: config.image,
+            descriptionIt: config.descriptionIt,
+            descriptionEn: config.descriptionEn,
+            price: currentPrice,
+            chartData: chartData,
+            imagePosition: config.imagePosition,
+            details: config.details
+        };
+    });
+}
+
+// Export the dynamically generated array
+export const CARS: Car[] = generateDynamicData();
