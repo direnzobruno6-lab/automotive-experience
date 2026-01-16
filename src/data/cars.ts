@@ -466,6 +466,46 @@ const CAR_CONFIGS: CarConfig[] = [
             engineIt: "3.5L V12 Quad-Turbo. 612 CV. 5 valvole per cilindro.",
             engineEn: "3.5L V12 Quad-Turbo. 612 hp. 5 valves per cylinder."
         }
+    },
+    {
+        brand: "Mercedes-Benz",
+        model: "280 SE 3.5 Coupé",
+        image: "/images/garage/280se_authentic.jpg",
+        descriptionIt: "L'ultima vera Mercedes costruita a mano. Eleganza senza tempo.",
+        descriptionEn: "The last true hand-built Mercedes. Timeless elegance.",
+        extendedDescriptionIt: "La W111 3.5 Coupé rappresenta l'apice del lusso Mercedes degli anni '60. È stata l'ultima auto del marchio ad essere veramente costruita a mano, unendo un potente V8 da 3,5 litri con uno stile che trasuda autorità e grazia. Un salotto a 200 km/h.",
+        extendedDescriptionEn: "The W111 3.5 Coupé represents the pinnacle of 1960s Mercedes luxury. It was the brand's last truly hand-built car, combining a powerful 3.5-liter V8 with styling that exudes authority and grace. A living room at 200 km/h.",
+        basePrice: 280000,
+        baseYear: 2015,
+        growthRate: 0.09,
+        details: {
+            exteriorIt: "Calandra 'bassa e larga', finestrini senza montanti, cromature abbondanti.",
+            exteriorEn: "'Low and wide' grille, pillarless windows, abundant chrome.",
+            interiorIt: "Plancia in radica massiccia, volante bianco, pelle spessa e profumata.",
+            interiorEn: "Solid burl wood dashboard, white steering wheel, thick scented leather.",
+            engineIt: "M116 V8 3.5L. 200 CV. Fluido come la seta.",
+            engineEn: "M116 3.5L V8. 200 hp. Smooth as silk."
+        }
+    },
+    {
+        brand: "Mercedes-Benz",
+        model: "190 D",
+        image: "/images/garage/190d_authentic.jpg",
+        descriptionIt: "Il carro armato indistruttibile. Lento, ma eterno.",
+        descriptionEn: "The indestructible tank. Slow, but eternal.",
+        extendedDescriptionIt: "La 'Baby Benz' che ha ridefinito gli standard di durata. La W201 190 D non è veloce, non è sportiva, ma è probabilmente l'auto meglio costruita della storia. Progettata per durare un milione di chilometri, è un'icona di ingegneria ossessiva.",
+        extendedDescriptionEn: "The 'Baby Benz' that redefined durability standards. The W201 190 D is not fast, it is not sporty, but it is arguably the best-built car in history. Designed to last a million kilometers, it is an icon of obsessive engineering.",
+        basePrice: 15000,
+        baseYear: 2015,
+        growthRate: 0.12, // Rising cult classic status
+        details: {
+            exteriorIt: "Design a cuneo di Bruno Sacco, paraurti indistruttibili, stella sul cofano.",
+            exteriorEn: "Wedge design by Bruno Sacco, indestructible bumpers, star on the hood.",
+            interiorIt: "Tessuto 'MB-Tex' che non si usura mai, ergonomia logica, lancette arancioni.",
+            interiorEn: "'MB-Tex' fabric that never wears out, logical ergonomics, orange needles.",
+            engineIt: "OM602 2.5L Diesel aspirato. 94 CV. Indistruttibile.",
+            engineEn: "OM602 2.5L naturally aspirated Diesel. 94 hp. Indestructible."
+        }
     }
 ];
 
