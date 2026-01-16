@@ -64,11 +64,11 @@ export default function Gallery() {
 
     return (
         <section id="gallery" className="py-24 bg-black overflow-hidden relative min-h-screen flex flex-col items-center justify-center">
-            <div className="absolute top-10 left-0 w-full z-[1000] text-center">
-                <h2 className="text-4xl md:text-8xl font-heading font-black uppercase text-white/5 tracking-widest pointer-events-none">
+            <div className="absolute top-10 left-0 w-full z-[1000] text-center pointer-events-none">
+                <h2 className="text-4xl md:text-9xl font-heading font-black uppercase text-white/30 tracking-widest drop-shadow-lg scale-y-110">
                     {t("nav.gallery").toUpperCase()}
                 </h2>
-                <p className="text-secondary/50 text-sm tracking-widest mt-4 uppercase">Orbital Collection</p>
+                <p className="text-secondary/80 text-sm tracking-widest mt-4 uppercase font-bold">Orbital Collection</p>
             </div>
 
             <div className="relative w-full max-w-[1400px] h-[600px] flex items-center justify-center perspective-1000">
