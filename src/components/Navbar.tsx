@@ -23,7 +23,8 @@ export default function Navbar() {
     const navLinks = [
         { name: t("nav.home"), href: "/#home" },
         { name: t("nav.vision"), href: "/#vision" },
-        { name: t("nav.services"), href: "/garage" }, // 'Esperienza' maps to Garage now
+        { name: t("nav.services"), href: "/garage" }, // 'Esperienza' maps to Garage
+        { name: "JOURNAL", href: "/journal" },
         { name: t("nav.gallery"), href: "/#gallery" },
         { name: t("nav.contact"), href: "/#contact" },
     ];
