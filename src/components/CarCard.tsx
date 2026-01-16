@@ -11,9 +11,11 @@ interface CarProps {
     car: Car;
     index: number;
     onSelect: (car: Car) => void;
+    isSelected?: boolean;
+    onToggleCompare?: (car: Car) => void;
 }
 
-export default function CarCard({ car, index, onSelect }: CarProps) {
+export default function CarCard({ car, index, onSelect, isSelected, onToggleCompare }: CarProps) {
     const { t, language } = useLanguage();
 
     return (
@@ -22,8 +24,8 @@ export default function CarCard({ car, index, onSelect }: CarProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
+            className={`bg-secondary/30 backdrop-blur-md border rounded-xl overflow-hidden transition-all duration-300 group cursor-pointer ${isSelected ? 'border-accent shadow-[0_0_20px_rgba(220,38,38,0.4)] scale-[1.02]' : 'border-white/10 hover:border-accent/50'}`}
             onClick={() => onSelect(car)}
-            className="bg-secondary/30 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden hover:border-accent/50 transition-colors duration-500 group cursor-pointer"
         >
             <div className="h-64 overflow-hidden relative">
                 <img
@@ -34,6 +36,17 @@ export default function CarCard({ car, index, onSelect }: CarProps) {
                     loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
+
+                {/* COMPARE TOGGLE */}
+                {onToggleCompare && (
+                    <button
+                        onClick={(e) => { e.stopPropagation(); onToggleCompare(car); }}
+                        className={`absolute top-3 right-3 z-20 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all border ${isSelected ? 'bg-accent text-white border-accent' : 'bg-black/50 text-gray-300 border-white/20 hover:bg-white hover:text-black'}`}
+                    >
+                        {isSelected ? 'Selected' : 'Compare'}
+                    </button>
+                )}
+
                 <div className="absolute bottom-4 left-4 z-10">
                     <h3 className="text-sm font-bold uppercase tracking-widest text-accent mb-1">{car.brand}</h3>
                     <h4 className="text-2xl font-heading font-bold text-white max-w-[90%]">{car.model}</h4>

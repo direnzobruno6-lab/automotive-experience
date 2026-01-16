@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/context/LanguageContext";
 import CarCard from "../../components/CarCard";
+import ComparisonModal from "../../components/ComparisonModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { CARS, Car } from "@/data/cars";
 import { useState } from "react";
@@ -9,7 +10,17 @@ import { X, Wind, Armchair, Zap } from "lucide-react";
 
 export default function GaragePage() {
     const { t, language } = useLanguage();
-    const [selectedCar, setSelectedCar] = useState<Car | null>(null);
+    const [compareList, setCompareList] = useState<Car[]>([]);
+    const [showCompareModal, setShowCompareModal] = useState(false);
+
+    const handleToggleCompare = (car: Car) => {
+        if (compareList.find(c => c.model === car.model)) {
+            setCompareList(prev => prev.filter(c => c.model !== car.model));
+        } else {
+            if (compareList.length >= 2) return; // Max 2
+            setCompareList(prev => [...prev, car]);
+        }
+    };
 
     // Group cars by brand
     const groupedCars = CARS.reduce((acc, car) => {
@@ -24,7 +35,7 @@ export default function GaragePage() {
     const sortedBrands = Object.keys(groupedCars).sort();
 
     return (
-        <main className="min-h-screen bg-black pt-32 pb-24">
+        <main className="min-h-screen bg-black pt-32 pb-24 relative">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-accent text-sm font-bold uppercase tracking-widest mb-2">{t("hero.garage")}</h2>
@@ -45,12 +56,71 @@ export default function GaragePage() {
                         </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {groupedCars[brand].map((car, index) => (
-                                <CarCard key={car.model} car={car} index={index} onSelect={setSelectedCar} />
+                                <CarCard
+                                    key={car.model}
+                                    car={car}
+                                    index={index}
+                                    onSelect={setSelectedCar}
+                                    isSelected={!!compareList.find(c => c.model === car.model)}
+                                    onToggleCompare={handleToggleCompare}
+                                />
                             ))}
                         </div>
                     </motion.div>
                 ))}
             </div>
+
+            {/* COMPARISON FLOATING DOCK */}
+            <AnimatePresence>
+                {compareList.length > 0 && (
+                    <motion.div
+                        initial={{ y: 100, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: 100, opacity: 0 }}
+                        className="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 bg-neutral-900/90 backdrop-blur-lg border border-white/10 px-6 py-4 rounded-full shadow-2xl flex items-center gap-6"
+                    >
+                        <div className="flex -space-x-4">
+                            {compareList.map((car, i) => (
+                                <div key={i} className="w-12 h-12 rounded-full border-2 border-black overflow-hidden relative">
+                                    <img src={car.image} className="w-full h-full object-cover" />
+                                </div>
+                            ))}
+                            {compareList.length < 2 && (
+                                <div className="w-12 h-12 rounded-full border-2 border-white/10 bg-white/5 flex items-center justify-center text-gray-500 text-xs">
+                                    +1
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="h-8 w-[1px] bg-white/10"></div>
+
+                        <button
+                            onClick={() => setShowCompareModal(true)}
+                            disabled={compareList.length < 2}
+                            className={`px-6 py-2 rounded-full font-bold uppercase text-sm tracking-wider transition-all ${compareList.length === 2 ? 'bg-accent text-white hover:bg-white hover:text-black shadow-[0_0_15px_rgba(220,38,38,0.5)]' : 'bg-gray-800 text-gray-500 cursor-not-allowed'}`}
+                        >
+                            Compare
+                        </button>
+
+                        <button
+                            onClick={() => setCompareList([])}
+                            className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                        >
+                            <X className="w-5 h-5 text-gray-400" />
+                        </button>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* COMPARISON MODAL */}
+            <AnimatePresence>
+                {showCompareModal && compareList.length === 2 && (
+                    <ComparisonModal
+                        cars={compareList}
+                        onClose={() => setShowCompareModal(false)}
+                    />
+                )}
+            </AnimatePresence>
 
             {/* DETAIL MODAL */}
             <AnimatePresence>
