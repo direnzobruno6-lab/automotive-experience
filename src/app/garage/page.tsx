@@ -10,6 +10,7 @@ import { X, Wind, Armchair, Zap } from "lucide-react";
 
 export default function GaragePage() {
     const { t, language } = useLanguage();
+    const [selectedCar, setSelectedCar] = useState<Car | null>(null);
     const [compareList, setCompareList] = useState<Car[]>([]);
     const [showCompareModal, setShowCompareModal] = useState(false);
 
