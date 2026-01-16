@@ -53,7 +53,7 @@ const CARS = [
     {
         brand: "McLaren",
         model: "P1",
-        image: "/images/garage/p1.jpg",
+        image: "/images/garage/p1_authentic.jpg",
         descriptionIt: "La prima hypercar ibrida inglese. Aerodinamica attiva e prestazioni F1.",
         descriptionEn: "The first British hybrid hypercar. Active aerodynamics and F1 performance.",
         price: 1900000,
