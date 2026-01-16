@@ -5,6 +5,13 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const IMAGES = [
+    "/images/garage/valkyrie.jpg",
+    "/images/garage/mclarenf1_authentic.jpg",
+    "/images/garage/enzo_authentic.jpg",
+    "/images/garage/carreragt_authentic.jpg",
+    "/images/garage/zonda_authentic.jpg",
+    "/images/garage/miura_authentic.jpg",
+    "/images/garage/eb110_authentic.jpg",
     "/images/garage/chiron_authentic.jpg",
     "/images/garage/laferrari_authentic.jpg",
     "/images/garage/p1_authentic.jpg",
