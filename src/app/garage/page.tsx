@@ -26,7 +26,7 @@ const CARS = [
     {
         brand: "Lamborghini",
         model: "Countach",
-        image: "/images/garage/countach.jpg",
+        image: "/images/garage/countach_authentic.jpg",
         descriptionIt: "La vettura che ha definito il concetto di supercar.",
         descriptionEn: "The car that defined the supercar concept.",
         price: 850000,
@@ -71,7 +71,7 @@ const CARS = [
     {
         brand: "Ferrari",
         model: "LaFerrari",
-        image: "/images/garage/laferrari.jpg",
+        image: "/images/garage/laferrari_authentic.jpg",
         descriptionIt: "La massima espressione del Cavallino Rampante. V12 Ibrido.",
         descriptionEn: "The ultimate expression of the Prancing Horse. V12 Hybrid.",
         price: 3800000,
@@ -80,7 +80,7 @@ const CARS = [
     {
         brand: "Koenigsegg",
         model: "Jesko",
-        image: "/images/garage/jesko.jpg",
+        image: "/images/garage/jesko_authentic.jpg",
         descriptionIt: "Il re della velocità svedese. Ingegneria oltre ogni limite.",
         descriptionEn: "The Swedish king of speed. Engineering beyond limits.",
         price: 3000000,
@@ -116,7 +116,7 @@ const CARS = [
     {
         brand: "Ford",
         model: "GT",
-        image: "/images/garage/fordgt.jpg",
+        image: "/images/garage/fordgt_authentic.jpg",
         descriptionIt: "Il ritorno della leggenda di Le Mans. Aerodinamica scavata.",
         descriptionEn: "The return of the Le Mans legend. Hollowed aerodynamics.",
         price: 1100000,
@@ -134,7 +134,7 @@ const CARS = [
     {
         brand: "Bugatti",
         model: "Veyron Super Sport",
-        image: "/images/garage/veyron.jpg",
+        image: "/images/garage/veyron_authentic.jpg",
         descriptionIt: "L'auto che ha cambiato tutto. La prima a rompere i 400 km/h.",
         descriptionEn: "The car that changed everything. The first to break 400 km/h.",
         price: 2100000,
