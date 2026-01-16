@@ -345,6 +345,126 @@ const CAR_CONFIGS: CarConfig[] = [
             engineIt: "W16 Quad-Turbo da 1200 CV. La regina della velocità.",
             engineEn: "1200 hp Quad-Turbo W16. The queen of speed."
         }
+    },
+    {
+        brand: "McLaren",
+        model: "F1",
+        image: "/images/garage/mclarenf1_authentic.jpg",
+        descriptionIt: "L'auto stradale più veloce del 20° secolo. Posto centrale, motore BMW V12.",
+        descriptionEn: "The fastest road car of the 20th century. Central seat, BMW V12 engine.",
+        extendedDescriptionIt: "Il capolavoro di Gordon Murray. Senza compromessi, senza aiuti, solo tu e la macchina. Tre posti, con il pilota al centro per la massima visibilità e controllo. Il vano motore è rivestito in oro zecchino per dissipare il calore del V12 BMW.",
+        extendedDescriptionEn: "Gordon Murray's masterpiece. No compromises, no aids, just you and the machine. Three seats, with the driver in the center for maximum visibility and control. The engine bay is lined with pure gold to dissipate heat from the BMW V12.",
+        basePrice: 10000000,
+        baseYear: 2015,
+        growthRate: 0.12,
+        details: {
+            exteriorIt: "Monoscocca in carbonio, porte a farfalla, aerodinamica fan-assist.",
+            exteriorEn: "Carbon fiber monocoque, butterfly doors, active fan-assisted aerodynamics.",
+            interiorIt: "Posizione di guida centrale, materiali leggeri, audio Kenwood su misura.",
+            interiorEn: "Central driving position, lightweight materials, bespoke Kenwood audio.",
+            engineIt: "BMW S70/2 V12 6.1L. 627 CV aspirato. Oro nel vano motore.",
+            engineEn: "BMW S70/2 V12 6.1L. 627 hp naturally aspirated. Gold interaction."
+        }
+    },
+    {
+        brand: "Ferrari",
+        model: "Enzo",
+        image: "/images/garage/enzo_authentic.jpg",
+        descriptionIt: "La F1 stradale dedicata al fondatore. V12, naso ispirato alla F1.",
+        descriptionEn: "The road-going F1 dedicated to the founder. V12, F1-inspired nose.",
+        extendedDescriptionIt: "Erede della F40 e F50, dedicata al fondatore. Un design controverso ma funzionale, dominato dall'aerodinamica. Il V12 da 660 cv è un gioiello di reattività, e il cambio F1 ha introdotto cambiate fulminee su strada.",
+        extendedDescriptionEn: "Heir to the F40 and F50, dedicated to the founder. A controversial but functional design, dominated by aerodynamics. The 660 hp V12 is a jewel of responsiveness, and the F1 gearbox introduced lightning-fast shifts to the road.",
+        basePrice: 2000000,
+        baseYear: 2015,
+        growthRate: 0.09,
+        details: {
+            exteriorIt: "Naso spigoloso stile F1, porte a farfalla, alettone attivo.",
+            exteriorEn: "Angular F1-style nose, butterfly doors, active rear wing.",
+            interiorIt: "Vasca in carbonio a vista, volante multifunzione, cruscotto digitale.",
+            interiorEn: "Exposed carbon tub, multifunction steering wheel, digital dashboard.",
+            engineIt: "V12 6.0L Tipo F140 B. 660 CV. 8200 giri/min.",
+            engineEn: "V12 6.0L Tipo F140 B. 660 hp. 8200 rpm redline."
+        }
+    },
+    {
+        brand: "Porsche",
+        model: "Carrera GT",
+        image: "/images/garage/carreragt_authentic.jpg",
+        descriptionIt: "L'ultimo vero analogico. V10 urlante, cambio manuale.",
+        descriptionEn: "The last true analog. Screaming V10, manual gearbox.",
+        extendedDescriptionIt: "Nata da un progetto Le Mans cancellato, è diventata una leggenda stradale. Motore V10 aspirato con un suono inconfondibile, cambio manuale con pomello in legno di balsa (come la 917) e una guida che non perdona errori.",
+        extendedDescriptionEn: "Born from a cancelled Le Mans project, it became a road legend. Naturally aspirated V10 with an unmistakable sound, manual gearbox with balsa wood knob (like the 917) and handling that forgives no errors.",
+        basePrice: 700000,
+        baseYear: 2015,
+        growthRate: 0.10,
+        details: {
+            exteriorIt: "Cofano motore in rete, alettone retrattile, tetto rimovibile.",
+            exteriorEn: "Mesh engine cover, retractable wing, removable roof.",
+            interiorIt: "Console centrale rialzata, pomello cambio in faggio, sedili a guscio.",
+            interiorEn: "Elevated center console, beechwood gear knob, bucket seats.",
+            engineIt: "5.7L V10 aspirato. 612 CV. Il suono degli angeli.",
+            engineEn: "5.7L naturally aspirated V10. 612 hp. The sound of angels."
+        }
+    },
+    {
+        brand: "Pagani",
+        model: "Zonda Cinque",
+        image: "/images/garage/zonda_authentic.jpg",
+        descriptionIt: "Cinque esemplari al mondo. Carbon-titànio, arte e violenza.",
+        descriptionEn: "Five units in the world. Carbo-titanium, art and violence.",
+        extendedDescriptionIt: "La Zonda definitiva per la strada. Solo cinque coupé e cinque roadster. Ha introdotto il carbo-titànio e la presa d'aria sul tetto. È l'apice della filosofia Zonda: un'auto che è più simile a un aereo da caccia barocco.",
+        extendedDescriptionEn: "The ultimate road-going Zonda. Only five coupes and five roadsters. Introduced carbo-titanium and the roof scoop. It is the pinnacle of the Zonda philosophy: a car that is more like a baroque fighter jet.",
+        basePrice: 3000000,
+        baseYear: 2015,
+        growthRate: 0.08,
+        details: {
+            exteriorIt: "Presa d'aria sul tetto, diffusore massiccio, livrea tricolore.",
+            exteriorEn: "Roof scoop, massive diffuser, tricolore livery.",
+            interiorIt: "Misto pelle/alcantara, levette aereonautiche, meccanica a vista.",
+            interiorEn: "Leather/alcantara mix, toggles, exposed mechanicals.",
+            engineIt: "AMG V12 7.3L. 678 CV. Scarico in Inconel.",
+            engineEn: "AMG V12 7.3L. 678 hp. Inconel exhaust."
+        }
+    },
+    {
+        brand: "Lamborghini",
+        model: "Miura P400 SV",
+        image: "/images/garage/miura_authentic.jpg",
+        descriptionIt: "La prima supercar della storia. Il design più bello di sempre.",
+        descriptionEn: "The first supercar in history. The most beautiful design ever.",
+        extendedDescriptionIt: "Dove tutto è iniziato. Gandini ha disegnato una sagoma che ha definito l'auto sportiva a motore centrale. La versione SV (Spinto Veloce) è la più matura e potente, correggendo i difetti di gioventù e allargando i passaruota.",
+        extendedDescriptionEn: "Where it all began. Gandini designed a silhouette that defined the mid-engined sports car. The SV (Spinto Veloce) version is the most mature and powerful, correcting youth defects and widening the wheel arches.",
+        basePrice: 1800000,
+        baseYear: 2015,
+        growthRate: 0.06,
+        details: {
+            exteriorIt: "Ciglia sui fari (tipiche Miura), cofani a conchiglia, profilo basso.",
+            exteriorEn: "Headlight eyelashes (symbolic), clamshell hoods, low profile.",
+            interiorIt: "Cruscotto a doppio pod, cambio a griglia, caos ergonomico italiano.",
+            interiorEn: "Twin-pod dash, gated shifter, classic Italian ergonomic chaos.",
+            engineIt: "V12 3.9L trasversale. 385 CV.",
+            engineEn: "3.9L transverse V12. 385 hp."
+        }
+    },
+    {
+        brand: "Bugatti",
+        model: "EB110 SS",
+        image: "/images/garage/eb110_authentic.jpg",
+        descriptionIt: "Il sogno italiano di Bugatti. 4 turbo, 4 ruote motrici.",
+        descriptionEn: "Bugatti's Italian dream. 4 turbos, 4 wheel drive.",
+        extendedDescriptionIt: "L'anello mancante tra le Bugatti classiche e l'era VW. Costruita a Campogalliano, con un telaio in carbonio (prima di serie) e un motore V12 piccolo ma sovralimentato da 4 turbine. La SS è la versione alleggerita e potenziata.",
+        extendedDescriptionEn: "The missing link between classic Bugattis and the VW era. Built in Campogalliano, with a carbon chassis (first production) and a small V12 engine supercharged by 4 turbines. The SS is the lightened and boosted version.",
+        basePrice: 800000,
+        baseYear: 2015,
+        growthRate: 0.14,
+        details: {
+            exteriorIt: "Alettone fisso, prese d'aria 'grattugia', porte a forbice.",
+            exteriorEn: "Fixed wing, 'cheese grater' cooling vents, scissor doors.",
+            interiorIt: "Pelle Poltrona Frau, radica, visibilità da jet.",
+            interiorEn: "Poltrona Frau leather, wood trim, fighter jet visibility.",
+            engineIt: "3.5L V12 Quad-Turbo. 612 CV. 5 valvole per cilindro.",
+            engineEn: "3.5L V12 Quad-Turbo. 612 hp. 5 valves per cylinder."
+        }
     }
 ];
 
