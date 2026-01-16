@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <div className="mb-6 md:mb-0">
                     <h2 className="text-xl font-heading font-bold uppercase tracking-wider mb-2">
-                        Automotive <span className="text-accent">X</span>
+                        Automotive <span className="text-red-600">X</span>
                     </h2>
                     <p className="text-gray-500 text-sm">
                         &copy; {currentYear} Automotive Experience. {t("footer.rights")}

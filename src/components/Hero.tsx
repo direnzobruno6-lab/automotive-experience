@@ -61,7 +61,7 @@ export default function Hero() {
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
                     <h1 className="text-5xl md:text-7xl lg:text-9xl font-heading font-black uppercase tracking-tighter text-white mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-                        Automotive <span className="text-white">Experience</span>
+                        Automotive <span className="text-red-600">X</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-300 font-light tracking-widest uppercase mb-12">
                         {t("hero.subtitle")}
