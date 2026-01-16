@@ -27,7 +27,7 @@ export const ARTICLES: Article[] = [
         subtitleEn: "As the world moves towards electric silence, we celebrate the mechanical orchestra we are about to lose.",
         category: "Opinion",
         date: "2024-05-12",
-        author: "Bruno Antigravity",
+        author: "Automotive X",
         image: "/images/garage/f40.jpg",
         quotes: [
             {
@@ -80,7 +80,7 @@ export const ARTICLES: Article[] = [
         subtitleEn: "From the assembly line to carbon fiber: how we got here.",
         category: "History",
         date: "2024-06-20",
-        author: "Bruno Antigravity",
+        author: "Automotive X",
         image: "/images/garage/miura_authentic.jpg", // Miura represents the mid-engine revolution
         quotes: [
             {
