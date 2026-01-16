@@ -26,9 +26,9 @@ export const ARTICLES: Article[] = [
         contentIt: `
             <p class="mb-6"><span class="text-4xl float-left mr-2 font-heading font-black text-accent leading-none">C</span>'è un momento preciso, poco prima del limitatore, dove un motore non sta semplicemente girando. Sta urlando. È una vibrazione che parte dal telaio, risale lungo la colonna vertebrale e ti dice che sei vivo. Questo è ciò che l'elettrico, nella sua perfetta efficienza, non potrà mai replicare.</p>
             
-            <blockquote class="border-l-4 border-red-600 pl-6 italic text-xl my-8 text-gray-200">
+            <blockquote class="border-l-4 border-red-600 pl-6 italic text-xl my-8 text-red-700 font-bold">
                 "La velocità non ha mai ucciso nessuno. È fermarsi all'improvviso che ti frega." 
-                <footer class="text-sm font-bold text-red-500 mt-2 uppercase not-italic">— Jeremy Clarkson</footer>
+                <footer class="text-sm font-bold text-red-800 mt-2 uppercase not-italic">— Jeremy Clarkson</footer>
             </blockquote>
 
             <h3 class="text-2xl font-bold mb-4 mt-8">L'Anima della Macchina</h3>
@@ -37,9 +37,9 @@ export const ARTICLES: Article[] = [
             <h3 class="text-2xl font-bold mb-4 mt-8">Il Rituale Perduto</h3>
             <p class="mb-6">C'è un rituale nell'accendere un'auto sportiva classica. Inserire la chiave (fisica, non un fob), girarla, sentire il motorino d'avviamento che lotta per un secondo prima che l'esplosione prenda vita. Poi l'attesa. Aspettare che l'olio vada in temperatura, rispettare la meccanica prima di chiederle tutto. Con l'elettrico, è "On/Off". Abbiamo guadagnato comodità, ma abbiamo perso il dialogo con la macchina.</p>
 
-            <blockquote class="border-l-4 border-blue-500 pl-6 italic text-xl my-8 text-gray-200">
+            <blockquote class="border-l-4 border-blue-600 pl-6 italic text-xl my-8 text-blue-700 font-bold">
                 "Non guidi una macchina sportiva per andare al lavoro. La guidi per sentire qualcosa." 
-                <footer class="text-sm font-bold text-blue-400 mt-2 uppercase not-italic">— Richard Hammond</footer>
+                <footer class="text-sm font-bold text-blue-900 mt-2 uppercase not-italic">— Richard Hammond</footer>
             </blockquote>
 
             <h3 class="text-2xl font-bold mb-4 mt-8">Il Silenzio in Arrivo</h3>
@@ -50,9 +50,9 @@ export const ARTICLES: Article[] = [
         contentEn: `
             <p class="mb-6"><span class="text-4xl float-left mr-2 font-heading font-black text-accent leading-none">T</span>here is a precise moment, just before the redline, where an engine isn't just spinning. It's screaming. It's a vibration that starts from the chassis, travels up your spine, and tells you that you are alive. This is what electric, in its perfect efficiency, can never replicate.</p>
             
-            <blockquote class="border-l-4 border-red-600 pl-6 italic text-xl my-8 text-gray-200">
+            <blockquote class="border-l-4 border-red-600 pl-6 italic text-xl my-8 text-red-700 font-bold">
                 "Speed has never killed anyone. Suddenly becoming stationary, that's what gets you."
-                <footer class="text-sm font-bold text-red-500 mt-2 uppercase not-italic">— Jeremy Clarkson</footer>
+                <footer class="text-sm font-bold text-red-800 mt-2 uppercase not-italic">— Jeremy Clarkson</footer>
             </blockquote>
 
             <h3 class="text-2xl font-bold mb-4 mt-8">The Soul of the Machine</h3>
@@ -61,9 +61,9 @@ export const ARTICLES: Article[] = [
             <h3 class="text-2xl font-bold mb-4 mt-8">The Lost Ritual</h3>
             <p class="mb-6">There is a ritual to starting a classic sports car. Inserting the key (physical, not a fob), turning it, feeling the starter motor struggle for a second before the explosion comes to life. Then the wait. Waiting for the oil to warm up, respecting the mechanics before asking for everything. With electric, it's "On/Off". We gained convenience, but we lost the dialogue with the machine.</p>
 
-            <blockquote class="border-l-4 border-blue-500 pl-6 italic text-xl my-8 text-gray-200">
+            <blockquote class="border-l-4 border-blue-600 pl-6 italic text-xl my-8 text-blue-700 font-bold">
                 "You don't drive a sports car to get to work. You drive it to feel something."
-                <footer class="text-sm font-bold text-blue-400 mt-2 uppercase not-italic">— Richard Hammond</footer>
+                <footer class="text-sm font-bold text-blue-900 mt-2 uppercase not-italic">— Richard Hammond</footer>
             </blockquote>
 
             <h3 class="text-2xl font-bold mb-4 mt-8">The Coming Silence</h3>
@@ -85,9 +85,9 @@ export const ARTICLES: Article[] = [
         contentIt: `
             <p class="mb-6">L'automobile non si è evoluta in linea retta. Ha fatto salti quantici. Ecco i quattro momenti che hanno cambiato tutto per le supercar.</p>
 
-            <blockquote class="border-l-4 border-yellow-500 pl-6 italic text-xl my-8 text-gray-200">
+            <blockquote class="border-l-4 border-yellow-500 pl-6 italic text-xl my-8 text-yellow-700 font-bold">
                 "L'aerodinamica è per chi non sa costruire motori."
-                <footer class="text-sm font-bold text-yellow-500 mt-2 uppercase not-italic">— Enzo Ferrari</footer>
+                <footer class="text-sm font-bold text-yellow-800 mt-2 uppercase not-italic">— Enzo Ferrari</footer>
             </blockquote>
 
             <h3 class="text-2xl font-bold mb-4 mt-8">1. Il Motore Centrale (1966)</h3>
@@ -96,9 +96,9 @@ export const ARTICLES: Article[] = [
             <h3 class="text-2xl font-bold mb-4 mt-8">2. L'Era del Carbonio (1981)</h3>
             <p class="mb-6">John Barnard e la McLaren MP4/1 cambiarono tutto in F1 introducendo la monoscocca in fibra di carbonio. Pochi anni dopo, la <strong>Ferrari F40</strong> portò questa tecnologia su strada. Improvvisamente, le auto potevano essere leggere come piume ma rigide come roccia.</p>
 
-            <blockquote class="border-l-4 border-gray-500 pl-6 italic text-xl my-8 text-gray-200">
+            <blockquote class="border-l-4 border-gray-600 pl-6 italic text-xl my-8 text-gray-700 font-bold">
                 "Aggiungere potenza ti rende più veloce sui rettilinei. Togliere peso ti rende più veloce ovunque."
-                <footer class="text-sm font-bold text-gray-400 mt-2 uppercase not-italic">— Colin Chapman</footer>
+                <footer class="text-sm font-bold text-black mt-2 uppercase not-italic">— Colin Chapman</footer>
             </blockquote>
 
             <h3 class="text-2xl font-bold mb-4 mt-8">3. Il Turbo nell'Era dell'Eccesso (1987)</h3>
@@ -110,9 +110,9 @@ export const ARTICLES: Article[] = [
         contentEn: `
             <p class="mb-6">The automobile didn't evolve in a straight line. It took quantum leaps. Here are the four moments that changed everything for supercars.</p>
 
-            <blockquote class="border-l-4 border-yellow-500 pl-6 italic text-xl my-8 text-gray-200">
+            <blockquote class="border-l-4 border-yellow-500 pl-6 italic text-xl my-8 text-yellow-700 font-bold">
                 "Aerodynamics are for people who can't build engines."
-                <footer class="text-sm font-bold text-yellow-500 mt-2 uppercase not-italic">— Enzo Ferrari</footer>
+                <footer class="text-sm font-bold text-yellow-800 mt-2 uppercase not-italic">— Enzo Ferrari</footer>
             </blockquote>
 
             <h3 class="text-2xl font-bold mb-4 mt-8">1. The Mid-Engine Layout (1966)</h3>
@@ -121,9 +121,9 @@ export const ARTICLES: Article[] = [
             <h3 class="text-2xl font-bold mb-4 mt-8">2. The Carbon Era (1981)</h3>
             <p class="mb-6">John Barnard and the McLaren MP4/1 changed everything in F1 by introducing the carbon fiber monocoque. A few years later, the <strong>Ferrari F40</strong> brought this tech to the road. Suddenly, cars could be feather-light yet rock-hard.</p>
 
-            <blockquote class="border-l-4 border-gray-500 pl-6 italic text-xl my-8 text-gray-200">
+            <blockquote class="border-l-4 border-gray-600 pl-6 italic text-xl my-8 text-gray-700 font-bold">
                 "Adding power makes you faster on the straights. Subtracting weight makes you faster everywhere."
-                <footer class="text-sm font-bold text-gray-400 mt-2 uppercase not-italic">— Colin Chapman</footer>
+                <footer class="text-sm font-bold text-black mt-2 uppercase not-italic">— Colin Chapman</footer>
             </blockquote>
 
             <h3 class="text-2xl font-bold mb-4 mt-8">3. Turbo in the Era of Excess (1987)</h3>
