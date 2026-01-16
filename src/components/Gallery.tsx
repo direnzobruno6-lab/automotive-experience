@@ -1,8 +1,8 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const IMAGES = [
     "/images/garage/chiron_authentic.jpg",
@@ -23,49 +23,80 @@ const IMAGES = [
 
 export default function Gallery() {
     const { t } = useLanguage();
-    const targetRef = useRef(null);
-    const { scrollYProgress } = useScroll({
-        target: targetRef,
-    });
+    const [rotation, setRotation] = useState(0);
 
-    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+    // Auto-rotation every 5s
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setRotation((prev) => prev - (360 / IMAGES.length)); // Rotate 1 slot
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
+
+    // Derived constants
+    const RADIUS_X = 600; // Width of ellipse
+    const RADIUS_Z = 300; // Depth of ellipse (affects scale/z-index)
+
+    // Sort images by "depth" (sin angle) so ones in front render last (on top)
+    const getCardStyle = (index: number) => {
+        const angleDeg = (index * (360 / IMAGES.length)) + rotation;
+        const angleRad = (angleDeg * Math.PI) / 180;
+
+        // Ellipse math
+        const x = Math.cos(angleRad) * RADIUS_X;
+        const z = Math.sin(angleRad) * RADIUS_Z; // This is our "depth" - positive is closer/front
+
+        // Scale based on Z (depth). Front (z=RADIUS_Z) is scale 1, Back (z=-RADIUS_Z) is scale 0.5
+        const scale = (z + RADIUS_Z * 1.5) / (RADIUS_Z * 2.5); // Ranges approx 0.4 to 1.0
+
+        // Opacity
+        const opacity = (z + RADIUS_Z * 1.5) / (RADIUS_Z * 2.5);
+
+        return { x, z, scale, opacity, zIndex: Math.floor(z + RADIUS_Z) };
+    };
 
     return (
-        <section ref={targetRef} id="gallery" className="relative h-[300vh] bg-neutral-900">
-            <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-                <div className="absolute top-10 left-0 w-full z-10 text-center">
-                    <h2 className="text-4xl md:text-8xl font-heading font-black uppercase text-white/10 tracking-widest pointer-events-none">
-                        {t("nav.gallery").toUpperCase()}
-                    </h2>
-                </div>
+        <section id="gallery" className="py-24 bg-black overflow-hidden relative min-h-screen flex flex-col items-center justify-center">
+            <div className="absolute top-10 left-0 w-full z-10 text-center">
+                <h2 className="text-4xl md:text-8xl font-heading font-black uppercase text-white/5 tracking-widest pointer-events-none">
+                    {t("nav.gallery").toUpperCase()}
+                </h2>
+                <p className="text-secondary/50 text-sm tracking-widest mt-4 uppercase">Orbital Collection</p>
+            </div>
 
-                <motion.div style={{ x }} className="flex gap-16 px-24">
-                    {IMAGES.map((src, index) => (
-                        <Card key={index} src={src} index={index} />
-                    ))}
-                </motion.div>
+            <div className="relative w-full max-w-[1400px] h-[600px] flex items-center justify-center perspective-1000">
+                {IMAGES.map((src, index) => {
+                    const style = getCardStyle(index);
+                    return (
+                        <motion.div
+                            key={index}
+                            animate={{
+                                x: style.x,
+                                scale: style.scale,
+                                opacity: style.opacity,
+                                zIndex: style.zIndex,
+                                filter: `blur(${Math.max(0, (1 - style.scale) * 10)}px) brightness(${style.opacity})`
+                            }}
+                            transition={{ duration: 1.5, ease: "easeInOut" }}
+                            className="absolute w-[300px] h-[400px] md:w-[400px] md:h-[550px] rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-neutral-900"
+                            style={{
+                                transformStyle: "preserve-3d",
+                            }}
+                        >
+                            <div
+                                className="w-full h-full bg-cover bg-center"
+                                style={{ backgroundImage: `url(${src})` }}
+                            />
+
+                            {/* Reflection/Shine effect */}
+                            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-30 pointer-events-none" />
+                        </motion.div>
+                    );
+                })}
+
+                {/* Central "Sun" or Gravity Point (optional, keeping clean for now or maybe a logo) */}
+                <div className="absolute w-2 h-2 bg-accent rounded-full blur-[50px] opacity-20 pointer-events-none" />
             </div>
         </section>
     );
 }
-
-const Card = ({ src, index }: { src: string; index: number }) => {
-    return (
-        <div
-            className="group relative h-[60vh] w-[40vw] md:w-[30vw] overflow-hidden bg-neutral-200 rounded-xl"
-        >
-            <div
-                style={{
-                    backgroundImage: `url(${src})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-                className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <span className="text-accent font-bold tracking-widest text-sm mb-2">COLLECTION</span>
-                <span className="text-white font-heading text-3xl font-bold uppercase">Masterpiece {index + 1}</span>
-            </div>
-        </div>
-    );
-};
