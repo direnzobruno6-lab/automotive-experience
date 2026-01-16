@@ -58,7 +58,7 @@ const CARS = [
         descriptionEn: "The first British hybrid hypercar. Active aerodynamics and F1 performance.",
         price: 1900000,
         chartData: [{ year: '2019', value: 1.4 }, { year: '2023', value: 1.9 }],
-        imagePosition: "50% 20%"
+        imagePosition: "50% 80%"
     },
     {
         brand: "Porsche",
@@ -77,7 +77,7 @@ const CARS = [
         descriptionEn: "The ultimate expression of the Prancing Horse. V12 Hybrid.",
         price: 3800000,
         chartData: [{ year: '2019', value: 2.5 }, { year: '2023', value: 3.8 }],
-        imagePosition: "50% 25%"
+        imagePosition: "50% 80%"
     },
     {
         brand: "Koenigsegg",
@@ -123,7 +123,7 @@ const CARS = [
         descriptionEn: "The return of the Le Mans legend. Hollowed aerodynamics.",
         price: 1100000,
         chartData: [{ year: '2019', value: 0.5 }, { year: '2023', value: 1.1 }],
-        imagePosition: "50% 20%"
+        imagePosition: "50% 80%"
     },
     {
         brand: "Maserati",
@@ -133,7 +133,7 @@ const CARS = [
         descriptionEn: "The racing sister of the Enzo. White, blue and victorious.",
         price: 3900000,
         chartData: [{ year: '2019', value: 2.0 }, { year: '2023', value: 4.0 }],
-        imagePosition: "50% 30%"
+        imagePosition: "50% 80%"
     },
     {
         brand: "Bugatti",
