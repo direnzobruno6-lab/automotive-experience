@@ -95,6 +95,15 @@ export default function GaragePage() {
                             {/* Details Section */}
                             <div className="w-full md:w-1/2 p-8 md:p-12 overflow-y-auto">
                                 <div className="space-y-8">
+                                    <div className="mb-8">
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <h4 className="text-2xl font-heading font-black text-white uppercase tracking-wider">{t("garage.story")}</h4>
+                                        </div>
+                                        <p className="text-gray-300 leading-relaxed text-lg italic border-l-2 border-accent pl-4">
+                                            "{language === 'it' ? selectedCar.extendedDescriptionIt : selectedCar.extendedDescriptionEn}"
+                                        </p>
+                                    </div>
+
                                     <div>
                                         <div className="flex items-center gap-3 mb-3">
                                             <Wind className="text-blue-400 w-5 h-5" />
