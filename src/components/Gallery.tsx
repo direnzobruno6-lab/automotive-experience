@@ -29,7 +29,7 @@ export default function Gallery() {
     useEffect(() => {
         const interval = setInterval(() => {
             setRotation((prev) => prev - (360 / IMAGES.length)); // Rotate 1 slot
-        }, 5000);
+        }, 3000);
         return () => clearInterval(interval);
     }, []);
 
