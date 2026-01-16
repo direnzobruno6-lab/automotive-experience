@@ -13,6 +13,9 @@ export default function GaragePage() {
     const [selectedCar, setSelectedCar] = useState<Car | null>(null);
     const [compareList, setCompareList] = useState<Car[]>([]);
     const [showCompareModal, setShowCompareModal] = useState(false);
+    const [activeFilter, setActiveFilter] = useState("All");
+
+    const FILTERS = ["All", "V12", "V10", "V8", "90s", "Modern", "Classic"];
 
     const handleToggleCompare = (car: Car) => {
         if (compareList.find(c => c.model === car.model)) {
@@ -23,8 +26,50 @@ export default function GaragePage() {
         }
     };
 
-    // Group cars by brand
-    const groupedCars = CARS.reduce((acc, car) => {
+    // Filter logic
+    const filteredCars = CARS.filter(car => {
+        if (activeFilter === "All") return true;
+
+        const engine = (car.details.engineEn + car.details.engineIt).toUpperCase();
+        const year = parseInt(car.chartData[0].year); // Base year approximately
+
+        if (activeFilter === "V12") return engine.includes("V12");
+        if (activeFilter === "V10") return engine.includes("V10");
+        if (activeFilter === "V8") return engine.includes("V8");
+
+        // Approximate decade filtering based on known car data or baseYear logic
+        // Since baseYear in config is mostly 2015 for calculation, we can't rely on it for age.
+        // We will infer decade from model strings or description for now as data.ts baseYear is for finance.
+        // ACTUALLY, checking data.ts, baseYear IS 2015 for many classics to calculate CURRENT value.
+        // So I need a better heuristic. 
+        // I will match specific models or keywords for eras? No, that's brittle.
+        // Let's use the Description text searching for years or "90s", "80s".
+        // OR better: I will manually tag them in logic here for reliability since I don't want to edit data.ts yet.
+
+        // Refined logic: search description for "19xx" or "20xx"?
+        // Let's stick to Engine filters for now which are 100% reliable?
+        // Wait, "90s" was requested.
+        // I will use a list of known 90s cars from the dataset: F50(not here), F1, EB110, Diablo(not here), MC12(2004), CLK GTR(not here).
+        // Let's look at the dataset I have:
+        // F40 (87-92), 300SL (50s), Countach (70s/80s), Chiron (Modern), Huayra (Modern), P1 (Modern), 918 (Modern), LaFerrari (Modern), Jesko (Modern), Valkyrie (Modern), Veneno (Modern), LFA (Modern), Ford GT (Modern), MC12 (2000s), Veyron (2000s), F1 (90s), Enzo (2000s), Carrera GT (2000s), Zonda (2000s), Miura (60s), EB110 (90s), 280SE (60s), 190D (80s/90s).
+
+        // "90s" -> EB110, F1
+        // "Classic" -> 300SL, Countach, Miura, 280SE, 190D, F40.
+        // "Modern" -> Everything else.
+
+        // Implementation:
+        const classics = ["300 SL", "Countach", "Miura", "280 SE", "190 D", "F40"];
+        const nineties = ["EB110", "F1"];
+
+        if (activeFilter === "Classic") return classics.some(c => car.model.includes(c));
+        if (activeFilter === "90s") return nineties.some(c => car.model.includes(c));
+        if (activeFilter === "Modern") return !classics.some(c => car.model.includes(c)) && !nineties.some(c => car.model.includes(c));
+
+        return true;
+    });
+
+    // Group cars by brand (from filtered list)
+    const groupedCars = filteredCars.reduce((acc, car) => {
         if (!acc[car.brand]) {
             acc[car.brand] = [];
         }
@@ -38,9 +83,22 @@ export default function GaragePage() {
     return (
         <main className="min-h-screen bg-black pt-32 pb-24 relative">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
+                <div className="text-center mb-10">
                     <h2 className="text-accent text-sm font-bold uppercase tracking-widest mb-2">{t("hero.garage")}</h2>
-                    <h3 className="text-4xl md:text-6xl font-heading font-black text-white uppercase">{t("garage.title")}</h3>
+                    <h3 className="text-4xl md:text-6xl font-heading font-black text-white uppercase mb-8">{t("garage.title")}</h3>
+
+                    {/* FILTER BAR */}
+                    <div className="flex flex-wrap justify-center gap-3">
+                        {FILTERS.map(filter => (
+                            <button
+                                key={filter}
+                                onClick={() => setActiveFilter(filter)}
+                                className={`px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider transition-all border ${activeFilter === filter ? 'bg-white text-black border-white scale-105' : 'bg-transparent text-gray-500 border-gray-800 hover:border-gray-500 hover:text-white'}`}
+                            >
+                                {filter}
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
                 {sortedBrands.map((brand) => (
