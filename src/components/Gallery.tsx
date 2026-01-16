@@ -64,7 +64,7 @@ export default function Gallery() {
 
     return (
         <section id="gallery" className="py-24 bg-black overflow-hidden relative min-h-screen flex flex-col items-center justify-center">
-            <div className="absolute top-10 left-0 w-full z-10 text-center">
+            <div className="absolute top-10 left-0 w-full z-[1000] text-center">
                 <h2 className="text-4xl md:text-8xl font-heading font-black uppercase text-white/5 tracking-widest pointer-events-none">
                     {t("nav.gallery").toUpperCase()}
                 </h2>
