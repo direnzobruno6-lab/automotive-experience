@@ -1,5 +1,6 @@
 "use client";
 
+import { Car } from "@/data/cars";
 import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
 import ValueChart from "./ValueChart";
@@ -7,17 +8,12 @@ import ValueChart from "./ValueChart";
 import Image from "next/image";
 
 interface CarProps {
-    brand: string;
-    model: string;
-    image: string;
-    descriptionIt: string;
-    descriptionEn: string;
-    price: number;
-    chartData: { year: string; value: number }[];
-    imagePosition?: string;
+    car: Car;
+    index: number;
+    onSelect: (car: Car) => void;
 }
 
-export default function CarCard({ car, index }: { car: CarProps; index: number }) {
+export default function CarCard({ car, index, onSelect }: CarProps) {
     const { t, language } = useLanguage();
 
     return (
@@ -26,7 +22,8 @@ export default function CarCard({ car, index }: { car: CarProps; index: number }
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="bg-secondary/30 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden hover:border-accent/50 transition-colors duration-500 group"
+            onClick={() => onSelect(car)}
+            className="bg-secondary/30 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden hover:border-accent/50 transition-colors duration-500 group cursor-pointer"
         >
             <div className="h-64 overflow-hidden relative">
                 <img

@@ -2,152 +2,14 @@
 
 import { useLanguage } from "@/context/LanguageContext";
 import CarCard from "../../components/CarCard";
-import { motion } from "framer-motion";
-
-const CARS = [
-    {
-        brand: "Ferrari",
-        model: "F40",
-        image: "/images/garage/f40.jpg",
-        descriptionIt: "L'ultima opera voluta da Enzo Ferrari. Un capolavoro di ingegneria pura.",
-        descriptionEn: "The last masterpiece commissioned by Enzo Ferrari. A masterpiece of pure engineering.",
-        price: 3400000,
-        chartData: [{ year: '2015', value: 1.2 }, { year: '2020', value: 1.8 }, { year: '2025', value: 3.4 }]
-    },
-    {
-        brand: "Mercedes-Benz",
-        model: "300 SL Gullwing",
-        image: "/images/garage/300sl_authentic.jpg",
-        descriptionIt: "Un'icona di stile. Le ali di gabbiano la rendono immortale.",
-        descriptionEn: "An icon of style. The gullwing doors make it immortal.",
-        price: 2100000,
-        chartData: [{ year: '2015', value: 1.1 }, { year: '2020', value: 1.4 }, { year: '2025', value: 2.1 }]
-    },
-    {
-        brand: "Lamborghini",
-        model: "Countach",
-        image: "/images/garage/countach_authentic.jpg",
-        descriptionIt: "La vettura che ha definito il concetto di supercar.",
-        descriptionEn: "The car that defined the supercar concept.",
-        price: 950000,
-        chartData: [{ year: '2015', value: 0.35 }, { year: '2020', value: 0.5 }, { year: '2025', value: 0.95 }]
-    },
-    {
-        brand: "Bugatti",
-        model: "Chiron",
-        image: "/images/garage/chiron_authentic.jpg",
-        descriptionIt: "1500 cavalli di pura potenza e lusso sfrenato.",
-        descriptionEn: "1500 horsepower of pure power and unbridled luxury.",
-        price: 3800000,
-        chartData: [{ year: '2018', value: 2.9 }, { year: '2021', value: 3.2 }, { year: '2025', value: 3.8 }]
-    },
-    {
-        brand: "Pagani",
-        model: "Huayra Roadster",
-        image: "/images/garage/huayra_authentic.jpg",
-        descriptionIt: "Arte in movimento. Fibra di carbonio e titanio scolpiti dal vento.",
-        descriptionEn: "Art in motion. Carbon fiber and titanium sculpted by the wind.",
-        price: 3200000,
-        chartData: [{ year: '2017', value: 2.4 }, { year: '2021', value: 2.7 }, { year: '2025', value: 3.2 }]
-    },
-    {
-        brand: "McLaren",
-        model: "P1",
-        image: "/images/garage/p1_authentic.jpg",
-        descriptionIt: "La prima hypercar ibrida inglese. Aerodinamica attiva e prestazioni F1.",
-        descriptionEn: "The first British hybrid hypercar. Active aerodynamics and F1 performance.",
-        price: 2200000,
-        chartData: [{ year: '2015', value: 1.4 }, { year: '2020', value: 1.6 }, { year: '2025', value: 2.2 }],
-        imagePosition: "50% 80%"
-    },
-    {
-        brand: "Porsche",
-        model: "918 Spyder",
-        image: "/images/garage/918_authentic.jpg",
-        descriptionIt: "L'equilibrio perfetto tra elettrico e termico. Un mostro da pista.",
-        descriptionEn: "The perfect balance between electric and thermal. A track monster.",
-        price: 1950000,
-        chartData: [{ year: '2015', value: 1.1 }, { year: '2020', value: 1.3 }, { year: '2025', value: 1.95 }]
-    },
-    {
-        brand: "Ferrari",
-        model: "LaFerrari",
-        image: "/images/garage/laferrari_authentic.jpg",
-        descriptionIt: "La massima espressione del Cavallino Rampante. V12 Ibrido.",
-        descriptionEn: "The ultimate expression of the Prancing Horse. V12 Hybrid.",
-        price: 4200000,
-        chartData: [{ year: '2015', value: 2.5 }, { year: '2020', value: 3.1 }, { year: '2025', value: 4.2 }],
-        imagePosition: "50% 80%"
-    },
-    {
-        brand: "Koenigsegg",
-        model: "Jesko",
-        image: "/images/garage/jesko_authentic.jpg",
-        descriptionIt: "Il re della velocità svedese. Ingegneria oltre ogni limite.",
-        descriptionEn: "The Swedish king of speed. Engineering beyond limits.",
-        price: 4100000,
-        chartData: [{ year: '2020', value: 3.0 }, { year: '2022', value: 3.4 }, { year: '2025', value: 4.1 }]
-    },
-    {
-        brand: "Aston Martin",
-        model: "Valkyrie",
-        image: "/images/garage/valkyrie.jpg",
-        descriptionIt: "Un'auto di Formula 1 omologata per la strada. Design estremo.",
-        descriptionEn: "A Formula 1 car approved for the road. Extreme design.",
-        price: 3500000,
-        chartData: [{ year: '2021', value: 3.0 }, { year: '2023', value: 3.2 }, { year: '2025', value: 3.5 }]
-    },
-    {
-        brand: "Lamborghini",
-        model: "Veneno",
-        image: "/images/garage/veneno.jpg",
-        descriptionIt: "Rarità assoluta. Design da caccia stealth e un V12 urlante.",
-        descriptionEn: "Absolute rarity. Stealth fighter design and a screaming V12.",
-        price: 9500000,
-        chartData: [{ year: '2014', value: 4.0 }, { year: '2019', value: 6.5 }, { year: '2025', value: 9.5 }]
-    },
-    {
-        brand: "Lexus",
-        model: "LFA",
-        image: "/images/garage/lfa_authentic.jpg",
-        descriptionIt: "Il suono più bello del mondo. Un V10 Yamaha che canta.",
-        descriptionEn: "The most beautiful sound in the world. A singing Yamaha V10.",
-        price: 1300000,
-        chartData: [{ year: '2015', value: 0.38 }, { year: '2020', value: 0.7 }, { year: '2025', value: 1.3 }]
-    },
-    {
-        brand: "Ford",
-        model: "GT",
-        image: "/images/garage/fordgt_authentic.jpg",
-        descriptionIt: "Il ritorno della leggenda di Le Mans. Aerodinamica scavata.",
-        descriptionEn: "The return of the Le Mans legend. Hollowed aerodynamics.",
-        price: 1400000,
-        chartData: [{ year: '2017', value: 0.5 }, { year: '2021', value: 0.9 }, { year: '2025', value: 1.4 }],
-        imagePosition: "50% 80%"
-    },
-    {
-        brand: "Maserati",
-        model: "MC12",
-        image: "/images/garage/mc12_authentic.jpg",
-        descriptionIt: "La sorella da gara della Enzo. Bianca, blu e vincente.",
-        descriptionEn: "The racing sister of the Enzo. White, blue and victorious.",
-        price: 5200000,
-        chartData: [{ year: '2015', value: 1.8 }, { year: '2020', value: 3.5 }, { year: '2025', value: 5.2 }],
-        imagePosition: "50% 80%"
-    },
-    {
-        brand: "Bugatti",
-        model: "Veyron Super Sport",
-        image: "/images/garage/veyron_authentic.jpg",
-        descriptionIt: "L'auto che ha cambiato tutto. La prima a rompere i 400 km/h.",
-        descriptionEn: "The car that changed everything. The first to break 400 km/h.",
-        price: 2500000,
-        chartData: [{ year: '2015', value: 1.5 }, { year: '2020', value: 1.9 }, { year: '2025', value: 2.5 }]
-    }
-];
+import { motion, AnimatePresence } from "framer-motion";
+import { CARS, Car } from "@/data/cars";
+import { useState } from "react";
+import { X, Wind, Armchair, Zap } from "lucide-react";
 
 export default function GaragePage() {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
+    const [selectedCar, setSelectedCar] = useState<Car | null>(null);
 
     // Group cars by brand
     const groupedCars = CARS.reduce((acc, car) => {
@@ -183,12 +45,96 @@ export default function GaragePage() {
                         </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {groupedCars[brand].map((car, index) => (
-                                <CarCard key={car.model} car={car} index={index} />
+                                <CarCard key={car.model} car={car} index={index} onSelect={setSelectedCar} />
                             ))}
                         </div>
                     </motion.div>
                 ))}
             </div>
+
+            {/* DETAIL MODAL */}
+            <AnimatePresence>
+                {selectedCar && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-lg"
+                        onClick={() => setSelectedCar(null)}
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, y: 50 }}
+                            animate={{ scale: 1, y: 0 }}
+                            exit={{ scale: 0.9, y: 50 }}
+                            className="bg-neutral-900 border border-white/10 w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl relative flex flex-col md:flex-row max-h-[90vh]"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                onClick={() => setSelectedCar(null)}
+                                className="absolute top-4 right-4 z-20 bg-black/50 p-2 rounded-full hover:bg-white/20 transition-colors"
+                            >
+                                <X className="text-white w-6 h-6" />
+                            </button>
+
+                            {/* Image Section */}
+                            <div className="w-full md:w-1/2 h-64 md:h-auto relative">
+                                <div
+                                    className="absolute inset-0 bg-cover bg-center"
+                                    style={{
+                                        backgroundImage: `url(${selectedCar.image})`,
+                                        backgroundPosition: selectedCar.imagePosition || 'center'
+                                    }}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent md:bg-gradient-to-r" />
+                                <div className="absolute bottom-6 left-6 z-10">
+                                    <h2 className="text-4xl font-heading font-black text-white uppercase mb-1">{selectedCar.model}</h2>
+                                    <h3 className="text-xl font-bold text-accent uppercase tracking-widest">{selectedCar.brand}</h3>
+                                </div>
+                            </div>
+
+                            {/* Details Section */}
+                            <div className="w-full md:w-1/2 p-8 md:p-12 overflow-y-auto">
+                                <div className="space-y-8">
+                                    <div>
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <Wind className="text-blue-400 w-5 h-5" />
+                                            <h4 className="text-lg font-bold text-white uppercase tracking-wider">Exterior Design</h4>
+                                        </div>
+                                        <p className="text-gray-400 leading-relaxed">
+                                            {language === 'it' ? selectedCar.details.exteriorIt : selectedCar.details.exteriorEn}
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <Armchair className="text-orange-400 w-5 h-5" />
+                                            <h4 className="text-lg font-bold text-white uppercase tracking-wider">Interior & Cockpit</h4>
+                                        </div>
+                                        <p className="text-gray-400 leading-relaxed">
+                                            {language === 'it' ? selectedCar.details.interiorIt : selectedCar.details.interiorEn}
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <Zap className="text-yellow-400 w-5 h-5" />
+                                            <h4 className="text-lg font-bold text-white uppercase tracking-wider">Engine & Specs</h4>
+                                        </div>
+                                        <p className="text-gray-400 leading-relaxed">
+                                            {language === 'it' ? selectedCar.details.engineIt : selectedCar.details.engineEn}
+                                        </p>
+                                    </div>
+
+                                    <div className="pt-6 border-t border-white/10 mt-8 flex justify-between items-center">
+                                        <span className="text-gray-500 text-sm">{selectedCar.chartData[selectedCar.chartData.length - 1].year} Market Value</span>
+                                        <span className="text-3xl font-bold text-white">€ {selectedCar.price.toLocaleString()}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </main>
     );
 }
