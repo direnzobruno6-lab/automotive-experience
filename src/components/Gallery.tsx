@@ -4,12 +4,18 @@ import { useLanguage } from "@/context/LanguageContext";
 import { motion } from "framer-motion";
 
 const IMAGES = [
-    "https://images.unsplash.com/photo-1503376763036-066120622c74?q=80&w=2670&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2670&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2670&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1544605975-d449e75529f7?q=80&w=2670&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=2670&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1570733117311-d990c3816c47?q=80&w=2670&auto=format&fit=crop",
+    "/images/garage/chiron_authentic.jpg",
+    "/images/garage/laferrari_authentic.jpg",
+    "/images/garage/p1_authentic.jpg",
+    "/images/garage/918_authentic.jpg",
+    "/images/garage/jesko_authentic.jpg",
+    "/images/garage/huayra_authentic.jpg",
+    "/images/garage/fordgt_authentic.jpg",
+    "/images/garage/mc12_authentic.jpg",
+    "/images/garage/lfa_authentic.jpg",
+    "/images/garage/300sl_authentic.jpg",
+    "/images/garage/countach_authentic.jpg",
+    "/images/garage/veyron_authentic.jpg"
 ];
 
 export default function Gallery() {
