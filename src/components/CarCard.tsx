@@ -14,6 +14,7 @@ interface CarProps {
     descriptionEn: string;
     price: number;
     chartData: { year: string; value: number }[];
+    imagePosition?: string;
 }
 
 export default function CarCard({ car, index }: { car: CarProps; index: number }) {
@@ -32,6 +33,7 @@ export default function CarCard({ car, index }: { car: CarProps; index: number }
                     src={car.image}
                     alt={`${car.brand} ${car.model}`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    style={{ objectPosition: car.imagePosition || 'center' }}
                     loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />

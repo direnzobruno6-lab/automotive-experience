@@ -57,7 +57,8 @@ const CARS = [
         descriptionIt: "La prima hypercar ibrida inglese. Aerodinamica attiva e prestazioni F1.",
         descriptionEn: "The first British hybrid hypercar. Active aerodynamics and F1 performance.",
         price: 1900000,
-        chartData: [{ year: '2019', value: 1.4 }, { year: '2023', value: 1.9 }]
+        chartData: [{ year: '2019', value: 1.4 }, { year: '2023', value: 1.9 }],
+        imagePosition: "50% 20%"
     },
     {
         brand: "Porsche",
@@ -75,7 +76,8 @@ const CARS = [
         descriptionIt: "La massima espressione del Cavallino Rampante. V12 Ibrido.",
         descriptionEn: "The ultimate expression of the Prancing Horse. V12 Hybrid.",
         price: 3800000,
-        chartData: [{ year: '2019', value: 2.5 }, { year: '2023', value: 3.8 }]
+        chartData: [{ year: '2019', value: 2.5 }, { year: '2023', value: 3.8 }],
+        imagePosition: "50% 25%"
     },
     {
         brand: "Koenigsegg",
@@ -120,7 +122,8 @@ const CARS = [
         descriptionIt: "Il ritorno della leggenda di Le Mans. Aerodinamica scavata.",
         descriptionEn: "The return of the Le Mans legend. Hollowed aerodynamics.",
         price: 1100000,
-        chartData: [{ year: '2019', value: 0.5 }, { year: '2023', value: 1.1 }]
+        chartData: [{ year: '2019', value: 0.5 }, { year: '2023', value: 1.1 }],
+        imagePosition: "50% 20%"
     },
     {
         brand: "Maserati",
@@ -129,7 +132,8 @@ const CARS = [
         descriptionIt: "La sorella da gara della Enzo. Bianca, blu e vincente.",
         descriptionEn: "The racing sister of the Enzo. White, blue and victorious.",
         price: 3900000,
-        chartData: [{ year: '2019', value: 2.0 }, { year: '2023', value: 4.0 }]
+        chartData: [{ year: '2019', value: 2.0 }, { year: '2023', value: 4.0 }],
+        imagePosition: "50% 30%"
     },
     {
         brand: "Bugatti",
