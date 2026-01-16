@@ -17,7 +17,7 @@ const CARS = [
     {
         brand: "Mercedes-Benz",
         model: "300 SL Gullwing",
-        image: "/images/garage/300sl.jpg",
+        image: "/images/garage/300sl_authentic.jpg",
         descriptionIt: "Un'icona di stile. Le ali di gabbiano la rendono immortale.",
         descriptionEn: "An icon of style. The gullwing doors make it immortal.",
         price: 1800000,
@@ -44,7 +44,7 @@ const CARS = [
     {
         brand: "Pagani",
         model: "Huayra Roadster",
-        image: "/images/garage/huayra.jpg",
+        image: "/images/garage/huayra_authentic.jpg",
         descriptionIt: "Arte in movimento. Fibra di carbonio e titanio scolpiti dal vento.",
         descriptionEn: "Art in motion. Carbon fiber and titanium sculpted by the wind.",
         price: 2800000,
@@ -62,7 +62,7 @@ const CARS = [
     {
         brand: "Porsche",
         model: "918 Spyder",
-        image: "/images/garage/918.jpg",
+        image: "/images/garage/918_authentic.jpg",
         descriptionIt: "L'equilibrio perfetto tra elettrico e termico. Un mostro da pista.",
         descriptionEn: "The perfect balance between electric and thermal. A track monster.",
         price: 1600000,
@@ -107,7 +107,7 @@ const CARS = [
     {
         brand: "Lexus",
         model: "LFA",
-        image: "/images/garage/lfa.jpg",
+        image: "/images/garage/lfa_authentic.jpg",
         descriptionIt: "Il suono più bello del mondo. Un V10 Yamaha che canta.",
         descriptionEn: "The most beautiful sound in the world. A singing Yamaha V10.",
         price: 900000,
@@ -125,7 +125,7 @@ const CARS = [
     {
         brand: "Maserati",
         model: "MC12",
-        image: "/images/garage/mc12.jpg",
+        image: "/images/garage/mc12_authentic.jpg",
         descriptionIt: "La sorella da gara della Enzo. Bianca, blu e vincente.",
         descriptionEn: "The racing sister of the Enzo. White, blue and victorious.",
         price: 3900000,
