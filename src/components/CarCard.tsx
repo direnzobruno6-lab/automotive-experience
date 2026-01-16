@@ -55,7 +55,15 @@ export default function CarCard({ car, index }: { car: CarProps; index: number }
                     </div>
                     <div className="flex justify-between items-end mb-2">
                         <span className="text-xs uppercase text-gray-500 tracking-wider">{t("card.trend")}</span>
-                        <span className="text-sm font-bold text-green-400">+12.5%</span> {/* Dynamic calculation logic could go here */}
+                        <span className="text-sm font-bold text-green-400">
+                            {(() => {
+                                if (!car.chartData || car.chartData.length < 2) return "+0%";
+                                const first = car.chartData[0].value;
+                                const last = car.chartData[car.chartData.length - 1].value;
+                                const growth = ((last - first) / first) * 100;
+                                return `+${growth.toFixed(1)}%`;
+                            })()}
+                        </span>
                     </div>
                     <ValueChart data={car.chartData} />
                 </div>
