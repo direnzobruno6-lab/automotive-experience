@@ -377,6 +377,7 @@ const CAR_CONFIGS: CarConfig[] = [
         basePrice: 2000000,
         baseYear: 2015,
         growthRate: 0.09,
+        imagePosition: "50% 75%",
         details: {
             exteriorIt: "Naso spigoloso stile F1, porte a farfalla, alettone attivo.",
             exteriorEn: "Angular F1-style nose, butterfly doors, active rear wing.",
