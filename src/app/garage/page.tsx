@@ -35,7 +35,7 @@ const CARS = [
     {
         brand: "Bugatti",
         model: "Chiron",
-        image: "/images/garage/chiron.jpg",
+        image: "/images/garage/chiron_authentic.jpg",
         descriptionIt: "1500 cavalli di pura potenza e lusso sfrenato.",
         descriptionEn: "1500 horsepower of pure power and unbridled luxury.",
         price: 3500000,
