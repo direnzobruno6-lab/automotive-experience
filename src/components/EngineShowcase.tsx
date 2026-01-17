@@ -59,7 +59,7 @@ const ENGINES = [
         name: "Engineering Miracle",
         descriptionIt: "Oltre ogni limite. 16 cilindri, 4 turbo, velocità che sfidano l'aeronautica.",
         descriptionEn: "Beyond all limits. 16 cylinders, 4 turbos, speeds that challenge aeronautics.",
-        volume: 0.5
+        volume: 1.0
     }
 ];
 
