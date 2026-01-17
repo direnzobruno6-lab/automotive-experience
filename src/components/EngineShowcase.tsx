@@ -9,49 +9,57 @@ const ENGINES = [
         type: "Inline-4",
         name: "Pure Energy",
         descriptionIt: "L'equilibrio perfetto tra efficienza e prestazioni. Il cuore pulsante delle sportive leggere.",
-        descriptionEn: "The perfect balance between efficiency and performance. The beating heart of lightweight sports cars."
+        descriptionEn: "The perfect balance between efficiency and performance. The beating heart of lightweight sports cars.",
+        volume: 0.5
     },
     {
         type: "Inline-6",
         name: "Perfect Balance",
         descriptionIt: "Famoso per la sua fluidità naturale e l'erogazione lineare. Un classico intramontabile.",
-        descriptionEn: "Famous for its natural smoothness and linear power delivery. A timeless classic."
+        descriptionEn: "Famous for its natural smoothness and linear power delivery. A timeless classic.",
+        volume: 0.5
     },
     {
         type: "V6",
         name: "Dynamic Force",
         descriptionIt: "Compatto e potente, la scelta moderna per le performance ibride di nuova generazione.",
-        descriptionEn: "Compact and powerful, the modern choice for next-generation hybrid performance."
+        descriptionEn: "Compact and powerful, the modern choice for next-generation hybrid performance.",
+        volume: 0.5
     },
     {
         type: "Boxer",
         name: "Low Center",
         descriptionIt: "Baricentro basso per una tenuta di strada ineguagliabile. Il suono inconfondibile della passione.",
-        descriptionEn: "Low center of gravity for unrivaled handling. The unmistakable sound of passion."
+        descriptionEn: "Low center of gravity for unrivaled handling. The unmistakable sound of passion.",
+        volume: 0.5
     },
     {
         type: "V8",
         name: "American & Italian Muscle",
         descriptionIt: "Il re del sound. Rombante, aggressivo, emozionante. L'architettura più amata dagli appassionati.",
-        descriptionEn: "The king of sound. Roaring, aggressive, emotional. The architecture most loved by enthusiasts."
+        descriptionEn: "The king of sound. Roaring, aggressive, emotional. The architecture most loved by enthusiasts.",
+        volume: 1.0
     },
     {
         type: "V10",
         name: "The Scream",
         descriptionIt: "Un urlo acuto derivato dalla F1. Raro, esotico e capace di regimi di rotazione incredibili.",
-        descriptionEn: "A high-pitched scream derived from F1. Rare, exotic, and capable of incredible RPMs."
+        descriptionEn: "A high-pitched scream derived from F1. Rare, exotic, and capable of incredible RPMs.",
+        volume: 0.5
     },
     {
         type: "V12",
         name: "Symphony of Cylinders",
         descriptionIt: "La massima espressione del lusso e della potenza. Vellutato ai bassi, devastante agli alti.",
-        descriptionEn: "The ultimate expression of luxury and power. Velvety at low revs, devastating at high revs."
+        descriptionEn: "The ultimate expression of luxury and power. Velvety at low revs, devastating at high revs.",
+        volume: 0.5
     },
     {
         type: "W16",
         name: "Engineering Miracle",
         descriptionIt: "Oltre ogni limite. 16 cilindri, 4 turbo, velocità che sfidano l'aeronautica.",
-        descriptionEn: "Beyond all limits. 16 cylinders, 4 turbos, speeds that challenge aeronautics."
+        descriptionEn: "Beyond all limits. 16 cylinders, 4 turbos, speeds that challenge aeronautics.",
+        volume: 0.5
     }
 ];
 
@@ -82,7 +90,7 @@ export default function EngineShowcase() {
         // Map engine type to filename, removing special chars and expanding abbreviations
         const filename = engine.type.toLowerCase().replace(/[^a-z0-9]/g, "");
         const audio = new Audio(`/sounds/${filename}.mp3`);
-        audio.volume = 0.5;
+        audio.volume = engine.volume;
 
         audioRef.current = audio;
         audio.play().catch(e => console.log("Audio not found or blocked:", e));
